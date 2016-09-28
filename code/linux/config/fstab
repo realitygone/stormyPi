@@ -1,0 +1,6 @@
+proc            /proc           proc    defaults          0       0
+/dev/mmcblk0p6  /boot           vfat    defaults          0       2
+/dev/mmcblk0p7  /               ext4    defaults,noatime  0       1
+# a swapfile is not a swap partition, no line here
+#   use  dphys-swapfile swap[on|off]  for that
+//eluria.home.eondream.com/stormyPi /home/pi/eluria cifs credentials=/home/pi/.samba/eluria.cred,uid=1000,_netdev 0 0
