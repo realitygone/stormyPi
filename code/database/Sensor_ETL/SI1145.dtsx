@@ -5,25 +5,25 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="MEJIS"
   DTS:CreatorName="HOME\mike"
-  DTS:DTSID="{91DEB11E-10C7-403F-A65C-FFAB272C237F}"
+  DTS:DTSID="{ED8642B6-8211-41EB-ADBA-082022889C55}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="13.0.2150.2"
   DTS:LocaleID="3081"
   DTS:MaxErrorCount="999"
-  DTS:ObjectName="anemometer"
+  DTS:ObjectName="SI1145"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="72"
-  DTS:VersionGUID="{23F77A53-C051-4007-A75D-DFAE21987C00}">
+  DTS:VersionBuild="68"
+  DTS:VersionGUID="{57ACAC4D-50A5-417C-8F6E-490168E9A355}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[anemometer data file connection]"
+      DTS:refId="Package.ConnectionManagers[SI1145 data file connection]"
       DTS:CreationName="FLATFILE"
       DTS:DelayValidation="True"
-      DTS:DTSID="{E6CC456E-4370-4634-9DA6-946B0BD89395}"
-      DTS:ObjectName="anemometer data file connection">
+      DTS:DTSID="{45D101A8-2915-4A59-98CC-6254CF1B668A}"
+      DTS:ObjectName="SI1145 data file connection">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">@[User::Data_source_filename]</DTS:PropertyExpression>
       <DTS:ObjectData>
@@ -39,42 +39,34 @@
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="304"
+              DTS:DataType="135"
               DTS:TextQualified="True"
               DTS:ObjectName="SYSTEM_TIMESTAMP"
-              DTS:DTSID="{655FF73E-5307-475A-9600-454E416B51CC}"
+              DTS:DTSID="{F8577D42-17DD-4276-82AA-564F951C45D4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
               DTS:DataType="3"
               DTS:TextQualified="True"
-              DTS:ObjectName="SYSTEM_EPOCH_TIME"
-              DTS:DTSID="{418E3C7A-17AC-486A-AAF9-7E3CC8D13B72}"
+              DTS:ObjectName="VIS"
+              DTS:DTSID="{B7AC118F-A5FD-4A78-8E25-C7318C693B13}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
               DTS:DataType="3"
               DTS:TextQualified="True"
-              DTS:ObjectName="SYSTEM_MILLISECONDS"
-              DTS:DTSID="{E416C7A6-512E-4EBE-ACDE-EB13043D177D}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="4"
-              DTS:TextQualified="True"
-              DTS:ObjectName="WIND_SPEED"
-              DTS:DTSID="{37A944BC-448B-47A3-BA5F-26705265E7FD}"
+              DTS:ObjectName="IR"
+              DTS:DTSID="{78E65B34-5653-4957-A903-3E4022F24873}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x000A_"
-              DTS:DataType="2"
+              DTS:DataType="3"
               DTS:TextQualified="True"
-              DTS:ObjectName="RAW_VALUE"
-              DTS:DTSID="{12AAE0D3-D6CF-4CC8-BCE7-DFB2FC5D76EE}"
+              DTS:ObjectName="UV"
+              DTS:DTSID="{32E1CD92-58E6-423A-A2AF-6B0C237F4905}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -85,7 +77,7 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="3"
-      DTS:DTSID="{DD26AC26-3DB2-47E8-A0ED-1B5BCED9DA48}"
+      DTS:DTSID="{32CDF81B-69CB-431C-9522-E66480CA8895}"
       DTS:ObjectName="Master_audit_key"
       DTS:Required="True">
       <DTS:Property
@@ -96,7 +88,7 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{8F622199-EECD-470B-85CF-FD26326A8C4A}"
+      DTS:DTSID="{AE06C34E-94A9-49A8-BEDC-EEF926EB7C63}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="Data_source_filename">
@@ -106,7 +98,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{F1FE3FF7-5002-4946-B6D6-BCD153F31A62}"
+      DTS:DTSID="{A9C51283-985E-45C2-B7A4-C1F5EAEF33CA}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="Number_of_files_errored">
@@ -115,7 +107,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{5DC25550-E9F6-4F79-8834-39334414B49F}"
+      DTS:DTSID="{7C13CD14-DA3A-45F0-AED2-A8A9818DD691}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="Number_of_files_processed">
@@ -124,7 +116,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{786712D5-CFED-4817-91A5-F4B67AE1FF19}"
+      DTS:DTSID="{00C981B4-ACA6-4A08-956F-359D584FCE3F}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="Number_of_files_successful">
@@ -133,7 +125,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{57E0AD71-4771-4CC4-8D47-C19C9C6238F6}"
+      DTS:DTSID="{3AEB7231-326E-497B-BDBE-CD0024C80CB2}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="Package_audit_key">
@@ -143,16 +135,16 @@
   </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\FCH - Process anemometer data"
+      DTS:refId="Package\FCH - Process SI1145 data"
       DTS:CreationName="STOCK:FOREACHLOOP"
-      DTS:DTSID="{5BBBF176-0D53-4697-B9E6-0D8CA4EBE829}"
+      DTS:DTSID="{5D7739E3-6E78-4483-ABD6-701B4E5CA2EC}"
       DTS:ExecutableType="STOCK:FOREACHLOOP"
       DTS:LocaleID="-1"
       DTS:MaxErrorCount="999"
-      DTS:ObjectName="FCH - Process anemometer data">
+      DTS:ObjectName="FCH - Process SI1145 data">
       <DTS:ForEachEnumerator
         DTS:CreationName="Microsoft.ForEachFileEnumerator"
-        DTS:DTSID="{048661C1-AB86-4B50-B961-AC340B49F39E}"
+        DTS:DTSID="{1C114E00-5A57-495F-816E-1AB172CB461A}"
         DTS:ObjectName="{6A22D1A2-99CD-45FE-87D2-89A5E5346F78}">
         <DTS:PropertyExpression
           DTS:Name="Directory">@[$Project::Data_source_directory]</DTS:PropertyExpression>
@@ -161,7 +153,7 @@
             <FEFEProperty
               Folder="D:\Users\mike.HOME\Documents\projects\data\incoming" />
             <FEFEProperty
-              FileSpec="anemometer*.csv" />
+              FileSpec="SI1145*.csv" />
             <FEFEProperty
               FileNameRetrievalType="0" />
             <FEFEProperty
@@ -172,7 +164,7 @@
       <DTS:Variables>
         <DTS:Variable
           DTS:CreationName=""
-          DTS:DTSID="{17183EB3-578E-4EEC-9F6C-965C74FBE12B}"
+          DTS:DTSID="{AAF74DAB-954E-42E6-BC6A-A1302C3B2BF9}"
           DTS:IncludeInDebugDump="6789"
           DTS:Namespace="User"
           DTS:ObjectName="Rows_extracted">
@@ -181,7 +173,7 @@
         </DTS:Variable>
         <DTS:Variable
           DTS:CreationName=""
-          DTS:DTSID="{BF229189-9EF4-4130-BD65-A93C312D828C}"
+          DTS:DTSID="{648C1D9C-D61B-404B-8044-75187983150D}"
           DTS:IncludeInDebugDump="6789"
           DTS:Namespace="User"
           DTS:ObjectName="Task_audit_key">
@@ -191,13 +183,13 @@
       </DTS:Variables>
       <DTS:Executables>
         <DTS:Executable
-          DTS:refId="Package\FCH - Process anemometer data\DFT - Process anemometer data file"
+          DTS:refId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{5C9D2CC8-0855-4C4B-B0B5-0A4F3099DF90}"
+          DTS:DTSID="{E9A54BB2-561E-4ED7-B91F-F1D522E8FD89}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
-          DTS:ObjectName="DFT - Process anemometer data file"
+          DTS:ObjectName="DFT - Process SI1145 data file"
           DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
@@ -205,7 +197,7 @@
               version="1">
               <components>
                 <component
-                  refId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\CNT - Rows extracted"
+                  refId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\CNT - Rows extracted"
                   componentClassID="Microsoft.RowCount"
                   contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
@@ -218,7 +210,7 @@
                   </properties>
                   <inputs>
                     <input
-                      refId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\CNT - Rows extracted.Inputs[Row Count Input 1]"
+                      refId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\CNT - Rows extracted.Inputs[Row Count Input 1]"
                       hasSideEffects="true"
                       name="Row Count Input 1">
                       <externalMetadataColumns />
@@ -226,15 +218,15 @@
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\CNT - Rows extracted.Outputs[Row Count Output 1]"
+                      refId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\CNT - Rows extracted.Outputs[Row Count Output 1]"
                       name="Row Count Output 1"
-                      synchronousInputId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\CNT - Rows extracted.Inputs[Row Count Input 1]">
+                      synchronousInputId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\CNT - Rows extracted.Inputs[Row Count Input 1]">
                       <externalMetadataColumns />
                     </output>
                   </outputs>
                 </component>
                 <component
-                  refId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\DER - Add audit column"
+                  refId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\DER - Add audit column"
                   componentClassID="Microsoft.DerivedColumn"
                   contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
@@ -242,7 +234,7 @@
                   usesDispositions="true">
                   <inputs>
                     <input
-                      refId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\DER - Add audit column.Inputs[Derived Column Input]"
+                      refId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\DER - Add audit column.Inputs[Derived Column Input]"
                       description="Input to the Derived Column Transformation"
                       name="Derived Column Input">
                       <externalMetadataColumns />
@@ -250,18 +242,18 @@
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\DER - Add audit column.Outputs[Derived Column Output]"
+                      refId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\DER - Add audit column.Outputs[Derived Column Output]"
                       description="Default Output of the Derived Column Transformation"
                       exclusionGroup="1"
                       name="Derived Column Output"
-                      synchronousInputId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\DER - Add audit column.Inputs[Derived Column Input]">
+                      synchronousInputId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\DER - Add audit column.Inputs[Derived Column Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\DER - Add audit column.Outputs[Derived Column Output].Columns[Insert_audit_key]"
+                          refId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\DER - Add audit column.Outputs[Derived Column Output].Columns[Insert_audit_key]"
                           dataType="i4"
                           errorOrTruncationOperation="Computation"
                           errorRowDisposition="FailComponent"
-                          lineageId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\DER - Add audit column.Outputs[Derived Column Output].Columns[Insert_audit_key]"
+                          lineageId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\DER - Add audit column.Outputs[Derived Column Output].Columns[Insert_audit_key]"
                           name="Insert_audit_key"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -282,23 +274,23 @@
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\DER - Add audit column.Outputs[Derived Column Error Output]"
+                      refId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\DER - Add audit column.Outputs[Derived Column Error Output]"
                       description="Error Output of the Derived Column Transformation"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="Derived Column Error Output"
-                      synchronousInputId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\DER - Add audit column.Inputs[Derived Column Input]">
+                      synchronousInputId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\DER - Add audit column.Inputs[Derived Column Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\DER - Add audit column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          refId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\DER - Add audit column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\DER - Add audit column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          lineageId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\DER - Add audit column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\DER - Add audit column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          refId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\DER - Add audit column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\DER - Add audit column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\DER - Add audit column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -307,12 +299,12 @@
                   </outputs>
                 </component>
                 <component
-                  refId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\FLT SRC - anemometer source file"
+                  refId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\FLT SRC - SI1145 source file"
                   componentClassID="Microsoft.FlatFileSource"
                   contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
                   description="Flat File Source"
                   localeId="3081"
-                  name="FLT SRC - anemometer source file"
+                  name="FLT SRC - SI1145 source file"
                   usesDispositions="true"
                   version="1">
                   <properties>
@@ -327,23 +319,23 @@
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Connections[FlatFileConnection]"
-                      connectionManagerID="Package.ConnectionManagers[anemometer data file connection]"
-                      connectionManagerRefId="Package.ConnectionManagers[anemometer data file connection]"
+                      refId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\FLT SRC - SI1145 source file.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[SI1145 data file connection]"
+                      connectionManagerRefId="Package.ConnectionManagers[SI1145 data file connection]"
                       name="FlatFileConnection" />
                   </connections>
                   <outputs>
                     <output
-                      refId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output]"
+                      refId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\FLT SRC - SI1145 source file.Outputs[Flat File Source Output]"
                       name="Flat File Source Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].Columns[SYSTEM_TIMESTAMP]"
+                          refId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\FLT SRC - SI1145 source file.Outputs[Flat File Source Output].Columns[SYSTEM_TIMESTAMP]"
                           dataType="dbTimeStamp2"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].ExternalColumns[SYSTEM_TIMESTAMP]"
-                          lineageId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].Columns[SYSTEM_TIMESTAMP]"
+                          externalMetadataColumnId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\FLT SRC - SI1145 source file.Outputs[Flat File Source Output].ExternalColumns[SYSTEM_TIMESTAMP]"
+                          lineageId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\FLT SRC - SI1145 source file.Outputs[Flat File Source Output].Columns[SYSTEM_TIMESTAMP]"
                           name="SYSTEM_TIMESTAMP"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -358,13 +350,13 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].Columns[SYSTEM_EPOCH_TIME]"
+                          refId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\FLT SRC - SI1145 source file.Outputs[Flat File Source Output].Columns[VIS]"
                           dataType="i4"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].ExternalColumns[SYSTEM_EPOCH_TIME]"
-                          lineageId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].Columns[SYSTEM_EPOCH_TIME]"
-                          name="SYSTEM_EPOCH_TIME"
+                          externalMetadataColumnId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\FLT SRC - SI1145 source file.Outputs[Flat File Source Output].ExternalColumns[VIS]"
+                          lineageId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\FLT SRC - SI1145 source file.Outputs[Flat File Source Output].Columns[VIS]"
+                          name="VIS"
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
@@ -378,13 +370,13 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].Columns[SYSTEM_MILLISECONDS]"
+                          refId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\FLT SRC - SI1145 source file.Outputs[Flat File Source Output].Columns[IR]"
                           dataType="i4"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].ExternalColumns[SYSTEM_MILLISECONDS]"
-                          lineageId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].Columns[SYSTEM_MILLISECONDS]"
-                          name="SYSTEM_MILLISECONDS"
+                          externalMetadataColumnId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\FLT SRC - SI1145 source file.Outputs[Flat File Source Output].ExternalColumns[IR]"
+                          lineageId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\FLT SRC - SI1145 source file.Outputs[Flat File Source Output].Columns[IR]"
+                          name="IR"
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
@@ -398,33 +390,13 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].Columns[WIND_SPEED]"
-                          dataType="r4"
+                          refId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\FLT SRC - SI1145 source file.Outputs[Flat File Source Output].Columns[UV]"
+                          dataType="i4"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].ExternalColumns[WIND_SPEED]"
-                          lineageId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].Columns[WIND_SPEED]"
-                          name="WIND_SPEED"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              dataType="System.Boolean"
-                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                              name="FastParse">false</property>
-                            <property
-                              dataType="System.Boolean"
-                              description="Indicates whether the data is in binary format."
-                              name="UseBinaryFormat">false</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].Columns[RAW_VALUE]"
-                          dataType="i2"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].ExternalColumns[RAW_VALUE]"
-                          lineageId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].Columns[RAW_VALUE]"
-                          name="RAW_VALUE"
+                          externalMetadataColumnId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\FLT SRC - SI1145 source file.Outputs[Flat File Source Output].ExternalColumns[UV]"
+                          lineageId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\FLT SRC - SI1145 source file.Outputs[Flat File Source Output].Columns[UV]"
+                          name="UV"
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
@@ -441,49 +413,45 @@
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].ExternalColumns[SYSTEM_TIMESTAMP]"
-                          dataType="dbTimeStamp2"
+                          refId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\FLT SRC - SI1145 source file.Outputs[Flat File Source Output].ExternalColumns[SYSTEM_TIMESTAMP]"
+                          dataType="dbTimeStamp"
                           name="SYSTEM_TIMESTAMP" />
                         <externalMetadataColumn
-                          refId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].ExternalColumns[SYSTEM_EPOCH_TIME]"
+                          refId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\FLT SRC - SI1145 source file.Outputs[Flat File Source Output].ExternalColumns[VIS]"
                           dataType="i4"
-                          name="SYSTEM_EPOCH_TIME" />
+                          name="VIS" />
                         <externalMetadataColumn
-                          refId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].ExternalColumns[SYSTEM_MILLISECONDS]"
+                          refId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\FLT SRC - SI1145 source file.Outputs[Flat File Source Output].ExternalColumns[IR]"
                           dataType="i4"
-                          name="SYSTEM_MILLISECONDS" />
+                          name="IR" />
                         <externalMetadataColumn
-                          refId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].ExternalColumns[WIND_SPEED]"
-                          dataType="r4"
-                          name="WIND_SPEED" />
-                        <externalMetadataColumn
-                          refId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].ExternalColumns[RAW_VALUE]"
-                          dataType="i2"
-                          name="RAW_VALUE" />
+                          refId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\FLT SRC - SI1145 source file.Outputs[Flat File Source Output].ExternalColumns[UV]"
+                          dataType="i4"
+                          name="UV" />
                       </externalMetadataColumns>
                     </output>
                     <output
-                      refId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Error Output]"
+                      refId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\FLT SRC - SI1145 source file.Outputs[Flat File Source Error Output]"
                       isErrorOut="true"
                       name="Flat File Source Error Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          refId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\FLT SRC - SI1145 source file.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                           codePage="1252"
                           dataType="text"
                           description="Flat File Source Error Output Column"
-                          lineageId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          lineageId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\FLT SRC - SI1145 source file.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                           name="Flat File Source Error Output Column" />
                         <outputColumn
-                          refId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          refId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\FLT SRC - SI1145 source file.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          lineageId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\FLT SRC - SI1145 source file.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          refId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\FLT SRC - SI1145 source file.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\FLT SRC - SI1145 source file.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -492,11 +460,11 @@
                   </outputs>
                 </component>
                 <component
-                  refId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer"
+                  refId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\OLE DST - Sensor DB table SI1145"
                   componentClassID="Microsoft.OLEDBDestination"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
-                  name="OLE DST - Sensor DB table anemometer"
+                  name="OLE DST - Sensor DB table SI1145"
                   usesDispositions="true"
                   version="4">
                   <properties>
@@ -507,7 +475,7 @@
                     <property
                       dataType="System.String"
                       description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">[staging].[Anemometer]</property>
+                      name="OpenRowset">[staging].[SI1145]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -549,7 +517,7 @@
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Connections[OleDbConnection]"
+                      refId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\OLE DST - Sensor DB table SI1145.Connections[OleDbConnection]"
                       connectionManagerID="{BAFB3E71-BAF6-462F-A87F-5E1F8D40E45C}:external"
                       connectionManagerRefId="Project.ConnectionManagers[stormyPi_Sensors]"
                       description="The OLE DB runtime connection used to access the database."
@@ -557,98 +525,87 @@
                   </connections>
                   <inputs>
                     <input
-                      refId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Inputs[OLE DB Destination Input]"
+                      refId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\OLE DST - Sensor DB table SI1145.Inputs[OLE DB Destination Input]"
                       errorOrTruncationOperation="Insert"
                       errorRowDisposition="FailComponent"
                       hasSideEffects="true"
                       name="OLE DB Destination Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Inputs[OLE DB Destination Input].Columns[SYSTEM_TIMESTAMP]"
+                          refId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\OLE DST - Sensor DB table SI1145.Inputs[OLE DB Destination Input].Columns[SYSTEM_TIMESTAMP]"
                           cachedDataType="dbTimeStamp2"
                           cachedName="SYSTEM_TIMESTAMP"
-                          externalMetadataColumnId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Inputs[OLE DB Destination Input].ExternalColumns[System_timestamp]"
-                          lineageId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].Columns[SYSTEM_TIMESTAMP]" />
+                          externalMetadataColumnId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\OLE DST - Sensor DB table SI1145.Inputs[OLE DB Destination Input].ExternalColumns[System_timestamp]"
+                          lineageId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\FLT SRC - SI1145 source file.Outputs[Flat File Source Output].Columns[SYSTEM_TIMESTAMP]" />
                         <inputColumn
-                          refId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Inputs[OLE DB Destination Input].Columns[Insert_audit_key]"
+                          refId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\OLE DST - Sensor DB table SI1145.Inputs[OLE DB Destination Input].Columns[Insert_audit_key]"
                           cachedDataType="i4"
                           cachedName="Insert_audit_key"
-                          externalMetadataColumnId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Inputs[OLE DB Destination Input].ExternalColumns[Insert_audit_key]"
-                          lineageId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\DER - Add audit column.Outputs[Derived Column Output].Columns[Insert_audit_key]" />
+                          externalMetadataColumnId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\OLE DST - Sensor DB table SI1145.Inputs[OLE DB Destination Input].ExternalColumns[Insert_audit_key]"
+                          lineageId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\DER - Add audit column.Outputs[Derived Column Output].Columns[Insert_audit_key]" />
                         <inputColumn
-                          refId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Inputs[OLE DB Destination Input].Columns[SYSTEM_EPOCH_TIME]"
+                          refId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\OLE DST - Sensor DB table SI1145.Inputs[OLE DB Destination Input].Columns[VIS]"
                           cachedDataType="i4"
-                          cachedName="SYSTEM_EPOCH_TIME"
-                          externalMetadataColumnId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Inputs[OLE DB Destination Input].ExternalColumns[System_epoch_time]"
-                          lineageId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].Columns[SYSTEM_EPOCH_TIME]" />
+                          cachedName="VIS"
+                          externalMetadataColumnId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\OLE DST - Sensor DB table SI1145.Inputs[OLE DB Destination Input].ExternalColumns[Vis]"
+                          lineageId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\FLT SRC - SI1145 source file.Outputs[Flat File Source Output].Columns[VIS]" />
                         <inputColumn
-                          refId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Inputs[OLE DB Destination Input].Columns[SYSTEM_MILLISECONDS]"
+                          refId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\OLE DST - Sensor DB table SI1145.Inputs[OLE DB Destination Input].Columns[IR]"
                           cachedDataType="i4"
-                          cachedName="SYSTEM_MILLISECONDS"
-                          externalMetadataColumnId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Inputs[OLE DB Destination Input].ExternalColumns[System_milliseconds]"
-                          lineageId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].Columns[SYSTEM_MILLISECONDS]" />
+                          cachedName="IR"
+                          externalMetadataColumnId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\OLE DST - Sensor DB table SI1145.Inputs[OLE DB Destination Input].ExternalColumns[IR]"
+                          lineageId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\FLT SRC - SI1145 source file.Outputs[Flat File Source Output].Columns[IR]" />
                         <inputColumn
-                          refId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Inputs[OLE DB Destination Input].Columns[WIND_SPEED]"
-                          cachedDataType="r4"
-                          cachedName="WIND_SPEED"
-                          externalMetadataColumnId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Inputs[OLE DB Destination Input].ExternalColumns[Wind_speed]"
-                          lineageId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].Columns[WIND_SPEED]" />
-                        <inputColumn
-                          refId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Inputs[OLE DB Destination Input].Columns[RAW_VALUE]"
-                          cachedDataType="i2"
-                          cachedName="RAW_VALUE"
-                          externalMetadataColumnId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Inputs[OLE DB Destination Input].ExternalColumns[Raw_ADC_value]"
-                          lineageId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].Columns[RAW_VALUE]" />
+                          refId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\OLE DST - Sensor DB table SI1145.Inputs[OLE DB Destination Input].Columns[UV]"
+                          cachedDataType="i4"
+                          cachedName="UV"
+                          externalMetadataColumnId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\OLE DST - Sensor DB table SI1145.Inputs[OLE DB Destination Input].ExternalColumns[UV]"
+                          lineageId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\FLT SRC - SI1145 source file.Outputs[Flat File Source Output].Columns[UV]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Inputs[OLE DB Destination Input].ExternalColumns[System_timestamp]"
-                          dataType="dbTimeStamp"
-                          name="System_timestamp" />
+                          refId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\OLE DST - Sensor DB table SI1145.Inputs[OLE DB Destination Input].ExternalColumns[System_timestamp]"
+                          dataType="dbTimeStamp2"
+                          name="System_timestamp"
+                          scale="7" />
                         <externalMetadataColumn
-                          refId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Inputs[OLE DB Destination Input].ExternalColumns[Insert_audit_key]"
+                          refId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\OLE DST - Sensor DB table SI1145.Inputs[OLE DB Destination Input].ExternalColumns[Insert_audit_key]"
                           dataType="i4"
                           name="Insert_audit_key" />
                         <externalMetadataColumn
-                          refId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Inputs[OLE DB Destination Input].ExternalColumns[System_epoch_time]"
+                          refId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\OLE DST - Sensor DB table SI1145.Inputs[OLE DB Destination Input].ExternalColumns[Vis]"
                           dataType="i4"
-                          name="System_epoch_time" />
+                          name="Vis" />
                         <externalMetadataColumn
-                          refId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Inputs[OLE DB Destination Input].ExternalColumns[System_milliseconds]"
+                          refId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\OLE DST - Sensor DB table SI1145.Inputs[OLE DB Destination Input].ExternalColumns[IR]"
                           dataType="i4"
-                          name="System_milliseconds" />
+                          name="IR" />
                         <externalMetadataColumn
-                          refId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Inputs[OLE DB Destination Input].ExternalColumns[Wind_speed]"
-                          dataType="numeric"
-                          name="Wind_speed"
-                          precision="9"
-                          scale="7" />
-                        <externalMetadataColumn
-                          refId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Inputs[OLE DB Destination Input].ExternalColumns[Raw_ADC_value]"
+                          refId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\OLE DST - Sensor DB table SI1145.Inputs[OLE DB Destination Input].ExternalColumns[UV]"
                           dataType="i4"
-                          name="Raw_ADC_value" />
+                          name="UV" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Outputs[OLE DB Destination Error Output]"
+                      refId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\OLE DST - Sensor DB table SI1145.Outputs[OLE DB Destination Error Output]"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="OLE DB Destination Error Output"
-                      synchronousInputId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Inputs[OLE DB Destination Input]">
+                      synchronousInputId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\OLE DST - Sensor DB table SI1145.Inputs[OLE DB Destination Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          refId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\OLE DST - Sensor DB table SI1145.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          lineageId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\OLE DST - Sensor DB table SI1145.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          refId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\OLE DST - Sensor DB table SI1145.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\OLE DST - Sensor DB table SI1145.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -659,34 +616,34 @@
               </components>
               <paths>
                 <path
-                  refId="Package\FCH - Process anemometer data\DFT - Process anemometer data file.Paths[Derived Column Output]"
-                  endId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Inputs[OLE DB Destination Input]"
+                  refId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file.Paths[Derived Column Output]"
+                  endId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\OLE DST - Sensor DB table SI1145.Inputs[OLE DB Destination Input]"
                   name="Derived Column Output"
-                  startId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\DER - Add audit column.Outputs[Derived Column Output]" />
+                  startId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\DER - Add audit column.Outputs[Derived Column Output]" />
                 <path
-                  refId="Package\FCH - Process anemometer data\DFT - Process anemometer data file.Paths[Flat File Source Output]"
-                  endId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\CNT - Rows extracted.Inputs[Row Count Input 1]"
+                  refId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file.Paths[Flat File Source Output]"
+                  endId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\CNT - Rows extracted.Inputs[Row Count Input 1]"
                   name="Flat File Source Output"
-                  startId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output]" />
+                  startId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\FLT SRC - SI1145 source file.Outputs[Flat File Source Output]" />
                 <path
-                  refId="Package\FCH - Process anemometer data\DFT - Process anemometer data file.Paths[Row Count Output 1]"
-                  endId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\DER - Add audit column.Inputs[Derived Column Input]"
+                  refId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file.Paths[Row Count Output 1]"
+                  endId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\DER - Add audit column.Inputs[Derived Column Input]"
                   name="Row Count Output 1"
-                  startId="Package\FCH - Process anemometer data\DFT - Process anemometer data file\CNT - Rows extracted.Outputs[Row Count Output 1]" />
+                  startId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\CNT - Rows extracted.Outputs[Row Count Output 1]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\FCH - Process anemometer data\EXP - Increment file count"
+          DTS:refId="Package\FCH - Process SI1145 data\EXP - Increment file count"
           DTS:CreationName="Microsoft.ExpressionTask"
           DTS:Description="Expression Task"
-          DTS:DTSID="{3EE04CF3-E6B3-4D62-99A1-423D44C98697}"
+          DTS:DTSID="{EC77520D-8046-4FC4-9CB8-B92B6C6B491C}"
           DTS:ExecutableType="Microsoft.ExpressionTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="EXP - Increment file count"
           DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="6">
           <DTS:Variables />
           <DTS:ObjectData>
             <ExpressionTask
@@ -694,25 +651,25 @@
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\FCH - Process anemometer data\SQC - Perform error actions"
+          DTS:refId="Package\FCH - Process SI1145 data\SQC - Perform error actions"
           DTS:CreationName="STOCK:SEQUENCE"
           DTS:Description="Sequence Container"
-          DTS:DTSID="{7ED7E596-8BCA-48F2-AC9A-4C7C0FDFE0E8}"
+          DTS:DTSID="{F4E5AB60-4DF3-40FB-BC2E-FCC14344E3DD}"
           DTS:ExecutableType="STOCK:SEQUENCE"
           DTS:LocaleID="-1"
           DTS:ObjectName="SQC - Perform error actions">
           <DTS:Variables />
           <DTS:Executables>
             <DTS:Executable
-              DTS:refId="Package\FCH - Process anemometer data\SQC - Perform error actions\EXP - Increment error file count"
+              DTS:refId="Package\FCH - Process SI1145 data\SQC - Perform error actions\EXP - Increment error file count"
               DTS:CreationName="Microsoft.ExpressionTask"
               DTS:Description="Expression Task"
-              DTS:DTSID="{A20379B1-3F9E-4AE1-AC83-C16F32792D21}"
+              DTS:DTSID="{B038DB8F-ABD8-4E26-A86D-A5CB0ADA8EB7}"
               DTS:ExecutableType="Microsoft.ExpressionTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="EXP - Increment error file count"
               DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="4">
               <DTS:Variables />
               <DTS:ObjectData>
                 <ExpressionTask
@@ -720,22 +677,22 @@
               </DTS:ObjectData>
             </DTS:Executable>
             <DTS:Executable
-              DTS:refId="Package\FCH - Process anemometer data\SQC - Perform error actions\FST - Move file to error dir"
+              DTS:refId="Package\FCH - Process SI1145 data\SQC - Perform error actions\FST - Move file to error dir"
               DTS:CreationName="Microsoft.FileSystemTask"
               DTS:DelayValidation="True"
               DTS:Description="File System Task"
-              DTS:DTSID="{EE862E93-35E8-4A82-8AAC-2A47A6A2354F}"
+              DTS:DTSID="{42FED679-028E-47D5-BFB6-10158C78A59E}"
               DTS:ExecutableType="Microsoft.FileSystemTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="FST - Move file to error dir"
               DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="2">
+              DTS:ThreadHint="3">
               <DTS:Variables />
               <DTS:EventHandlers>
                 <DTS:EventHandler
-                  DTS:refId="Package\FCH - Process anemometer data\SQC - Perform error actions\FST - Move file to error dir.EventHandlers[OnPreExecute]"
+                  DTS:refId="Package\FCH - Process SI1145 data\SQC - Perform error actions\FST - Move file to error dir.EventHandlers[OnPreExecute]"
                   DTS:CreationName="OnPreExecute"
-                  DTS:DTSID="{31A22A4F-182A-45C7-92A2-431B95ADE3D2}"
+                  DTS:DTSID="{E660C487-4409-4FDE-8157-4C58AC7E757C}"
                   DTS:EventID="0"
                   DTS:EventName="OnPreExecute"
                   DTS:LocaleID="-1">
@@ -743,7 +700,7 @@
                     <DTS:Variable
                       DTS:CreationName=""
                       DTS:Description="The propagate property of the event"
-                      DTS:DTSID="{57E83BF3-F82D-46A0-95B3-ABA36664E3BF}"
+                      DTS:DTSID="{12696B4F-7DD6-4180-9CD6-BD227BE9A7E8}"
                       DTS:IncludeInDebugDump="6789"
                       DTS:Namespace="System"
                       DTS:ObjectName="Propagate">
@@ -753,10 +710,10 @@
                   </DTS:Variables>
                   <DTS:Executables>
                     <DTS:Executable
-                      DTS:refId="Package\FCH - Process anemometer data\SQC - Perform error actions\FST - Move file to error dir.EventHandlers[OnPreExecute]\SQL - Set success field to false"
+                      DTS:refId="Package\FCH - Process SI1145 data\SQC - Perform error actions\FST - Move file to error dir.EventHandlers[OnPreExecute]\SQL - Set success field to false"
                       DTS:CreationName="Microsoft.ExecuteSQLTask"
                       DTS:Description="Execute SQL Task"
-                      DTS:DTSID="{9FABD3B4-0106-4564-8FAB-7084F9737360}"
+                      DTS:DTSID="{7E8F5693-C0F8-4DC8-9677-C5C2FFD57E18}"
                       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
                       DTS:LocaleID="-1"
                       DTS:ObjectName="SQL - Set success field to false"
@@ -791,25 +748,25 @@
           </DTS:Executables>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\FCH - Process anemometer data\SQC - Perform success actions"
+          DTS:refId="Package\FCH - Process SI1145 data\SQC - Perform success actions"
           DTS:CreationName="STOCK:SEQUENCE"
           DTS:Description="Sequence Container"
-          DTS:DTSID="{AC81BC37-F77C-4EA4-914A-6509C09F0F02}"
+          DTS:DTSID="{CA0FD31A-569D-451F-B7CD-589DC272D339}"
           DTS:ExecutableType="STOCK:SEQUENCE"
           DTS:LocaleID="-1"
           DTS:ObjectName="SQC - Perform success actions">
           <DTS:Variables />
           <DTS:Executables>
             <DTS:Executable
-              DTS:refId="Package\FCH - Process anemometer data\SQC - Perform success actions\EXP - Increment success file count"
+              DTS:refId="Package\FCH - Process SI1145 data\SQC - Perform success actions\EXP - Increment success file count"
               DTS:CreationName="Microsoft.ExpressionTask"
               DTS:Description="Expression Task"
-              DTS:DTSID="{FD58B909-C55F-45B4-941A-ADFD9741B715}"
+              DTS:DTSID="{61D9802F-C5F4-44ED-88FD-31DAF595B8A0}"
               DTS:ExecutableType="Microsoft.ExpressionTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="EXP - Increment success file count"
               DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="3">
+              DTS:ThreadHint="2">
               <DTS:Variables />
               <DTS:ObjectData>
                 <ExpressionTask
@@ -817,22 +774,22 @@
               </DTS:ObjectData>
             </DTS:Executable>
             <DTS:Executable
-              DTS:refId="Package\FCH - Process anemometer data\SQC - Perform success actions\FST - Move file to processed dir"
+              DTS:refId="Package\FCH - Process SI1145 data\SQC - Perform success actions\FST - Move file to processed dir"
               DTS:CreationName="Microsoft.FileSystemTask"
               DTS:DelayValidation="True"
               DTS:Description="File System Task"
-              DTS:DTSID="{1EED1B28-F366-4ED5-AA8B-9B96BE69261C}"
+              DTS:DTSID="{7E3C4491-8761-4F27-943A-E02F5840D969}"
               DTS:ExecutableType="Microsoft.FileSystemTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="FST - Move file to processed dir"
               DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="4">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:EventHandlers>
                 <DTS:EventHandler
-                  DTS:refId="Package\FCH - Process anemometer data\SQC - Perform success actions\FST - Move file to processed dir.EventHandlers[OnPostExecute]"
+                  DTS:refId="Package\FCH - Process SI1145 data\SQC - Perform success actions\FST - Move file to processed dir.EventHandlers[OnPostExecute]"
                   DTS:CreationName="OnPostExecute"
-                  DTS:DTSID="{8B09F5C9-FF36-4E5F-8017-1EF31E630242}"
+                  DTS:DTSID="{27F02391-A83A-4DA9-BA11-4C548B29586A}"
                   DTS:EventID="0"
                   DTS:EventName="OnPostExecute"
                   DTS:LocaleID="-1">
@@ -840,7 +797,7 @@
                     <DTS:Variable
                       DTS:CreationName=""
                       DTS:Description="The propagate property of the event"
-                      DTS:DTSID="{82DCB4A3-15FC-4066-A1B6-4B2988A2F213}"
+                      DTS:DTSID="{A4813E72-8A39-4563-9D1C-6073D2059D41}"
                       DTS:IncludeInDebugDump="6789"
                       DTS:Namespace="System"
                       DTS:ObjectName="Propagate">
@@ -850,10 +807,10 @@
                   </DTS:Variables>
                   <DTS:Executables>
                     <DTS:Executable
-                      DTS:refId="Package\FCH - Process anemometer data\SQC - Perform success actions\FST - Move file to processed dir.EventHandlers[OnPostExecute]\SQL - Set success field to true"
+                      DTS:refId="Package\FCH - Process SI1145 data\SQC - Perform success actions\FST - Move file to processed dir.EventHandlers[OnPostExecute]\SQL - Set success field to true"
                       DTS:CreationName="Microsoft.ExecuteSQLTask"
                       DTS:Description="Execute SQL Task"
-                      DTS:DTSID="{6122E0CD-2647-40A6-BE9E-395361B9B8B6}"
+                      DTS:DTSID="{ED3A6C20-6711-4EEE-BA63-9B999AEC78F2}"
                       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
                       DTS:LocaleID="-1"
                       DTS:ObjectName="SQL - Set success field to true"
@@ -886,29 +843,29 @@
               </DTS:ObjectData>
             </DTS:Executable>
             <DTS:Executable
-              DTS:refId="Package\FCH - Process anemometer data\SQC - Perform success actions\SQL - Move data from staging table"
+              DTS:refId="Package\FCH - Process SI1145 data\SQC - Perform success actions\SQL - Move data from staging table"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{D6AC0A64-95E0-4173-9DCF-90CAEE419C02}"
+              DTS:DTSID="{DB6735F4-EE8F-4502-9F51-9E5E68D8BE5F}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="SQL - Move data from staging table"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="5">
+              DTS:ThreadHint="1">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
                   SQLTask:Connection="{BAFB3E71-BAF6-462F-A87F-5E1F8D40E45C}"
-                  SQLTask:SqlStatementSource="INSERT INTO [dbo].[anemometer] (&#xA;&#x9;[System_timestamp],&#xA;&#x9;[System_epoch_time],&#xA;&#x9;[System_milliseconds],&#xA;&#x9;[Wind_speed],&#xA;&#x9;[Raw_ADC_value],&#xA;&#x9;[Insert_audit_key]&#xA;)&#xA;SELECT [System_timestamp],&#xA;&#x9;[System_epoch_time],&#xA;&#x9;[System_milliseconds],&#xA;&#x9;[Wind_speed],&#xA;&#x9;[Raw_ADC_value],&#xA;&#x9;[Insert_audit_key]&#xA;FROM [staging].[anemometer];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+                  SQLTask:SqlStatementSource="INSERT INTO [dbo].[SI1145] (&#xA;&#x9;[System_timestamp],&#xA;&#x9;[Vis],&#xA;&#x9;[IR],&#xA;&#x9;[UV],&#xA;&#x9;[Insert_audit_key]&#xA;)&#xA;SELECT [System_timestamp],&#xA;&#x9;[Vis],&#xA;&#x9;[IR],&#xA;&#x9;[UV],&#xA;&#x9;[Insert_audit_key]&#xA;FROM [staging].[SI1145];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
           </DTS:Executables>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\FCH - Process anemometer data\SQL - Create task audit row"
+          DTS:refId="Package\FCH - Process SI1145 data\SQL - Create task audit row"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{C0DA7064-63E0-4641-B85F-EC8D9E5A0577}"
+          DTS:DTSID="{DB1C4616-A13D-44F2-A386-3738E599B72C}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="SQL - Create task audit row"
@@ -918,7 +875,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{BAFB3E71-BAF6-462F-A87F-5E1F8D40E45C}"
-              SQLTask:SqlStatementSource="INSERT INTO [log].[etl_executions] (&#xA; [Parent_audit_key],&#xA; [Task_name],&#xA; [File_name],&#xA; [Row_count_start],&#xA; [Execution_GUID]&#xA;)&#xA;VALUES (&#xA; ?,&#xA; ? + ' data file',&#xA; ?,&#xA; ( SELECT COUNT(*) FROM [dbo].[anemometer] ),&#xA; ?&#xA;);&#xA;&#xA;SELECT SCOPE_IDENTITY() AS Task_audit_key;"
+              SQLTask:SqlStatementSource="INSERT INTO [log].[etl_executions] (&#xA; [Parent_audit_key],&#xA; [Task_name],&#xA; [File_name],&#xA; [Row_count_start],&#xA; [Execution_GUID]&#xA;)&#xA;VALUES (&#xA; ?,&#xA; ? + ' data file',&#xA; ?,&#xA; ( SELECT COUNT(*) FROM [dbo].[SI1145] ),&#xA; ?&#xA;);&#xA;&#xA;SELECT SCOPE_IDENTITY() AS Task_audit_key;"
               SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ResultBinding
                 SQLTask:ResultName="0"
@@ -951,20 +908,20 @@
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\FCH - Process anemometer data\SQL - Finalise task audit row"
+          DTS:refId="Package\FCH - Process SI1145 data\SQL - Finalise task audit row"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{15AAA3AE-B0B3-44CB-A274-4CB45B19FE9C}"
+          DTS:DTSID="{99653205-63DA-406D-A86A-8C6957007ED2}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="SQL - Finalise task audit row"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="6">
+          DTS:ThreadHint="5">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{BAFB3E71-BAF6-462F-A87F-5E1F8D40E45C}"
-              SQLTask:SqlStatementSource="UPDATE [log].[etl_executions]&#xA;SET Processing_end=SYSDATETIME(),&#xA;&#x9;Row_count_end=(&#xA;&#x9;&#x9;SELECT COUNT(*)&#xA;&#x9;&#x9;FROM [dbo].[anemometer]&#xA;&#x9;),&#xA;&#x9;Items_processed=?&#xA;WHERE [Audit_key]=?;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource="UPDATE [log].[etl_executions]&#xA;SET Processing_end=SYSDATETIME(),&#xA;&#x9;Row_count_end=(&#xA;&#x9;&#x9;SELECT COUNT(*)&#xA;&#x9;&#x9;FROM [dbo].[SI1145]&#xA;&#x9;),&#xA;&#x9;Items_processed=?&#xA;WHERE [Audit_key]=?;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="0"
                 SQLTask:DtsVariableName="User::Rows_extracted"
@@ -981,10 +938,10 @@
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\FCH - Process anemometer data\SQL - Truncate staging table"
+          DTS:refId="Package\FCH - Process SI1145 data\SQL - Truncate staging table"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{97E8124E-0DE3-42B8-80FD-28F5169F0272}"
+          DTS:DTSID="{E5AE6BE4-A885-48A7-A841-29205FD3E817}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="SQL - Truncate staging table"
@@ -1000,60 +957,60 @@
       </DTS:Executables>
       <DTS:PrecedenceConstraints>
         <DTS:PrecedenceConstraint
-          DTS:refId="Package\FCH - Process anemometer data.PrecedenceConstraints[Constraint]"
+          DTS:refId="Package\FCH - Process SI1145 data.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{151AABDF-8ACA-4513-AECD-E951C0A68CD8}"
-          DTS:From="Package\FCH - Process anemometer data\DFT - Process anemometer data file"
+          DTS:DTSID="{1B3D42A0-DD37-42EB-93FD-C1FC9667BC64}"
+          DTS:From="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
-          DTS:To="Package\FCH - Process anemometer data\SQC - Perform success actions" />
+          DTS:To="Package\FCH - Process SI1145 data\SQC - Perform success actions" />
         <DTS:PrecedenceConstraint
-          DTS:refId="Package\FCH - Process anemometer data.PrecedenceConstraints[Constraint 1]"
+          DTS:refId="Package\FCH - Process SI1145 data.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
-          DTS:DTSID="{52567EFA-EE95-4E2A-8396-1B857C6196F8}"
-          DTS:From="Package\FCH - Process anemometer data\DFT - Process anemometer data file"
+          DTS:DTSID="{D6631DB4-019E-4D4B-A9E1-D43895AEB08F}"
+          DTS:From="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
-          DTS:To="Package\FCH - Process anemometer data\SQC - Perform error actions"
+          DTS:To="Package\FCH - Process SI1145 data\SQC - Perform error actions"
           DTS:Value="1" />
         <DTS:PrecedenceConstraint
-          DTS:refId="Package\FCH - Process anemometer data.PrecedenceConstraints[Constraint 2]"
+          DTS:refId="Package\FCH - Process SI1145 data.PrecedenceConstraints[Constraint 2]"
           DTS:CreationName=""
-          DTS:DTSID="{FDB6860E-384C-4DB3-B964-E03EAECC7913}"
-          DTS:From="Package\FCH - Process anemometer data\SQC - Perform success actions"
+          DTS:DTSID="{0796C546-5794-486F-993B-B5A864339E28}"
+          DTS:From="Package\FCH - Process SI1145 data\SQC - Perform success actions"
           DTS:ObjectName="Constraint 2"
-          DTS:To="Package\FCH - Process anemometer data\SQL - Finalise task audit row"
+          DTS:To="Package\FCH - Process SI1145 data\SQL - Finalise task audit row"
           DTS:Value="2" />
         <DTS:PrecedenceConstraint
-          DTS:refId="Package\FCH - Process anemometer data.PrecedenceConstraints[Constraint 3]"
+          DTS:refId="Package\FCH - Process SI1145 data.PrecedenceConstraints[Constraint 3]"
           DTS:CreationName=""
-          DTS:DTSID="{BCA01892-F97E-45A6-97A0-5994E9E286CD}"
-          DTS:From="Package\FCH - Process anemometer data\SQC - Perform error actions"
+          DTS:DTSID="{EB42FCD2-E1AA-4ED5-8CCA-0660228E9DE4}"
+          DTS:From="Package\FCH - Process SI1145 data\SQC - Perform error actions"
           DTS:ObjectName="Constraint 3"
-          DTS:To="Package\FCH - Process anemometer data\SQL - Finalise task audit row"
+          DTS:To="Package\FCH - Process SI1145 data\SQL - Finalise task audit row"
           DTS:Value="2" />
         <DTS:PrecedenceConstraint
-          DTS:refId="Package\FCH - Process anemometer data.PrecedenceConstraints[Constraint 4]"
+          DTS:refId="Package\FCH - Process SI1145 data.PrecedenceConstraints[Constraint 4]"
           DTS:CreationName=""
-          DTS:DTSID="{9D435E08-52BF-4B75-8147-B0DE85B279C2}"
-          DTS:From="Package\FCH - Process anemometer data\SQL - Create task audit row"
+          DTS:DTSID="{E54645BF-CD08-4C2F-B165-D14E0C8B0C13}"
+          DTS:From="Package\FCH - Process SI1145 data\SQL - Create task audit row"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 4"
-          DTS:To="Package\FCH - Process anemometer data\SQL - Truncate staging table" />
+          DTS:To="Package\FCH - Process SI1145 data\SQL - Truncate staging table" />
         <DTS:PrecedenceConstraint
-          DTS:refId="Package\FCH - Process anemometer data.PrecedenceConstraints[Constraint 5]"
+          DTS:refId="Package\FCH - Process SI1145 data.PrecedenceConstraints[Constraint 5]"
           DTS:CreationName=""
-          DTS:DTSID="{999F91A9-638E-48CD-97E3-B54DA9A4FB88}"
-          DTS:From="Package\FCH - Process anemometer data\SQL - Truncate staging table"
+          DTS:DTSID="{A9A964F4-F882-490C-A363-6765B548AA9A}"
+          DTS:From="Package\FCH - Process SI1145 data\SQL - Truncate staging table"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 5"
-          DTS:To="Package\FCH - Process anemometer data\DFT - Process anemometer data file" />
+          DTS:To="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file" />
       </DTS:PrecedenceConstraints>
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{DAF62DC2-BD49-47A2-BF2B-F4C52C22EE63}"
-          DTS:ObjectName="{DAF62DC2-BD49-47A2-BF2B-F4C52C22EE63}"
+          DTS:DTSID="{0E21C47D-4667-4B7F-AB30-4FC12E843105}"
+          DTS:ObjectName="{0E21C47D-4667-4B7F-AB30-4FC12E843105}"
           DTS:ValueIndex="0"
           DTS:VariableName="User::Data_source_filename" />
       </DTS:ForEachVariableMappings>
@@ -1062,7 +1019,7 @@
       DTS:refId="Package\SQL - Create package audit row"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{F7CCCF60-2E46-4CDD-8D24-FD868A960053}"
+      DTS:DTSID="{2B3E82F8-596D-4460-AF11-F919BB254012}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="SQL - Create package audit row"
@@ -1072,7 +1029,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{BAFB3E71-BAF6-462F-A87F-5E1F8D40E45C}"
-          SQLTask:SqlStatementSource="INSERT INTO [log].[etl_executions] (&#xA;&#x9;[Parent_audit_key],&#xA;&#x9;[Task_name],&#xA;&#x9;[Row_count_start],&#xA;&#x9;[Execution_GUID]&#xA;)&#xA;VALUES (&#xA;&#x9;?,&#xA;&#x9;?,&#xA;&#x9;(SELECT COUNT(*) FROM [dbo].[anemometer]),&#xA;&#x9;?&#xA;);&#xA;&#xA;SELECT SCOPE_IDENTITY() AS Package_audit_key;"
+          SQLTask:SqlStatementSource="INSERT INTO [log].[etl_executions] (&#xA;&#x9;[Parent_audit_key],&#xA;&#x9;[Task_name],&#xA;&#x9;[Row_count_start],&#xA;&#x9;[Execution_GUID]&#xA;)&#xA;VALUES (&#xA;&#x9;?,&#xA;&#x9;?,&#xA;&#x9;(SELECT COUNT(*) FROM [dbo].[SI1145]),&#xA;&#x9;?&#xA;);&#xA;&#xA;SELECT SCOPE_IDENTITY() AS Package_audit_key;"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
             SQLTask:ResultName="0"
@@ -1102,7 +1059,7 @@
       DTS:refId="Package\SQL - Finalise package audit row"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{A229F7A3-2F9F-4AB6-B52E-F35F99BC4AA4}"
+      DTS:DTSID="{DA31C891-993B-4B54-B008-8DB5D3EAEBFA}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="SQL - Finalise package audit row"
@@ -1112,7 +1069,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{BAFB3E71-BAF6-462F-A87F-5E1F8D40E45C}"
-          SQLTask:SqlStatementSource="UPDATE [log].[etl_executions]&#xA;SET Processing_end=SYSDATETIME(),&#xA;&#x9;Row_count_end=(SELECT COUNT(*) FROM [dbo].[anemometer]),&#xA;&#x9;Success=1,&#xA;&#x9;Items_processed=?,&#xA;&#x9;Items_successful=?,&#xA;&#x9;Items_error=?&#xA;WHERE Audit_key=?;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          SQLTask:SqlStatementSource="UPDATE [log].[etl_executions]&#xA;SET Processing_end=SYSDATETIME(),&#xA;&#x9;Row_count_end=(SELECT COUNT(*) FROM [dbo].[SI1145]),&#xA;&#x9;Success=1,&#xA;&#x9;Items_processed=?,&#xA;&#x9;Items_successful=?,&#xA;&#x9;Items_error=?&#xA;WHERE Audit_key=?;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
             SQLTask:DtsVariableName="User::Number_of_files_processed"
@@ -1145,16 +1102,16 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{4310A4B7-D349-40DE-9CF6-5992906FAAF9}"
+      DTS:DTSID="{02E5E2E4-8F29-4293-9CEA-77B28BB2F4BB}"
       DTS:From="Package\SQL - Create package audit row"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
-      DTS:To="Package\FCH - Process anemometer data" />
+      DTS:To="Package\FCH - Process SI1145 data" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{59635498-D7B1-4ABD-9159-934B2D953138}"
-      DTS:From="Package\FCH - Process anemometer data"
+      DTS:DTSID="{5726A98D-0936-4BE9-AE4D-05AA1D256633}"
+      DTS:From="Package\FCH - Process SI1145 data"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
       DTS:To="Package\SQL - Finalise package audit row" />
@@ -1172,133 +1129,133 @@
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="248,42"
-          Id="Package\FCH - Process anemometer data\DFT - Process anemometer data file"
-          TopLeft="258.071428571429,99.8571428571427" />
+          Size="222,42"
+          Id="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file"
+          TopLeft="277.071428571429,99.8571428571427" />
         <NodeLayout
           Size="203,42"
-          Id="Package\FCH - Process anemometer data\EXP - Increment file count"
+          Id="Package\FCH - Process SI1145 data\EXP - Increment file count"
           TopLeft="563.785714285714,49.2857142857141" />
         <NodeLayout
           Size="229,42"
-          Id="Package\FCH - Process anemometer data\SQC - Perform error actions\EXP - Increment error file count"
+          Id="Package\FCH - Process SI1145 data\SQC - Perform error actions\EXP - Increment error file count"
           TopLeft="25.5,24.0714285714286" />
         <NodeLayout
           Size="204,42"
-          Id="Package\FCH - Process anemometer data\SQC - Perform error actions\FST - Move file to error dir"
+          Id="Package\FCH - Process SI1145 data\SQC - Perform error actions\FST - Move file to error dir"
           TopLeft="30.7142857142858,91.2142857142858" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
           PanelSize="275,188"
           Size="275,231"
-          Id="Package\FCH - Process anemometer data\SQC - Perform error actions"
+          Id="Package\FCH - Process SI1145 data\SQC - Perform error actions"
           TopLeft="422.857142857143,188.714285714286" />
         <NodeLayout
           Size="242,42"
-          Id="Package\FCH - Process anemometer data\SQC - Perform success actions\EXP - Increment success file count"
+          Id="Package\FCH - Process SI1145 data\SQC - Perform success actions\EXP - Increment success file count"
           TopLeft="31.0238095238096,173.833333333333" />
         <NodeLayout
           Size="228,42"
-          Id="Package\FCH - Process anemometer data\SQC - Perform success actions\FST - Move file to processed dir"
+          Id="Package\FCH - Process SI1145 data\SQC - Perform success actions\FST - Move file to processed dir"
           TopLeft="27.7380952380953,97.5238095238094" />
         <NodeLayout
           Size="246,42"
-          Id="Package\FCH - Process anemometer data\SQC - Perform success actions\SQL - Move data from staging table"
+          Id="Package\FCH - Process SI1145 data\SQC - Perform success actions\SQL - Move data from staging table"
           TopLeft="21.2142857142857,21.2142857142857" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
           PanelSize="298,271"
           Size="298,314"
-          Id="Package\FCH - Process anemometer data\SQC - Perform success actions"
+          Id="Package\FCH - Process SI1145 data\SQC - Perform success actions"
           TopLeft="27.3571428571429,188.714285714286" />
         <NodeLayout
           Size="209,42"
-          Id="Package\FCH - Process anemometer data\SQL - Create task audit row"
+          Id="Package\FCH - Process SI1145 data\SQL - Create task audit row"
           TopLeft="30.3571428571429,22.9999999999998" />
         <NodeLayout
           Size="213,42"
-          Id="Package\FCH - Process anemometer data\SQL - Finalise task audit row"
+          Id="Package\FCH - Process SI1145 data\SQL - Finalise task audit row"
           TopLeft="424.071428571429,460.714285714285" />
         <NodeLayout
           Size="214,42"
-          Id="Package\FCH - Process anemometer data\SQL - Truncate staging table"
+          Id="Package\FCH - Process SI1145 data\SQL - Truncate staging table"
           TopLeft="282.142857142857,17.8571428571426" />
         <EdgeLayout
-          Id="Package\FCH - Process anemometer data.PrecedenceConstraints[Constraint]"
-          TopLeft="342.071428571429,141.857142857143">
+          Id="Package\FCH - Process SI1145 data.PrecedenceConstraints[Constraint]"
+          TopLeft="352.404761904762,141.857142857143">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-165.714285714286,46.8571428571433"
+              EndConnector="-176.047619047619,46.8571428571433"
               Start="0,0"
-              End="-165.714285714286,39.3571428571433">
+              End="-176.047619047619,39.3571428571433">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,14.9230769230771" />
+                    End="0,14.9440327114747" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,14.9230769230771"
-                    Point2="0,18.9230769230771"
-                    Point3="-4,18.9230769230771" />
+                    Point1="0,14.9440327114747"
+                    Point2="0,18.9440327114747"
+                    Point3="-4,18.9440327114747" />
                   <mssgle:LineSegment
-                    End="-161.714285714286,18.9230769230771" />
+                    End="-172.047619047619,18.9440327114747" />
                   <mssgle:CubicBezierSegment
-                    Point1="-161.714285714286,18.9230769230771"
-                    Point2="-165.714285714286,18.9230769230771"
-                    Point3="-165.714285714286,22.9230769230771" />
+                    Point1="-172.047619047619,18.9440327114747"
+                    Point2="-176.047619047619,18.9440327114747"
+                    Point3="-176.047619047619,22.9440327114747" />
                   <mssgle:LineSegment
-                    End="-165.714285714286,39.3571428571433" />
+                    End="-176.047619047619,39.3571428571433" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-100.850385044643,23.9230769230771,35.986484375,9.5537109375"
+              BoundingBox="-106.01705171131,23.9440327114747,35.986484375,9.5537109375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FCH - Process anemometer data.PrecedenceConstraints[Constraint 1]"
-          TopLeft="422.071428571429,141.857142857143">
+          Id="Package\FCH - Process SI1145 data.PrecedenceConstraints[Constraint 1]"
+          TopLeft="423.738095238096,141.857142857143">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="138.285714285714,46.8571428571433"
+              EndConnector="136.619047619047,46.8571428571433"
               Start="0,0"
-              End="138.285714285714,39.3571428571433">
+              End="136.619047619047,39.3571428571433">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,14.9230769230771" />
+                    End="0,14.9440327114748" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,14.9230769230771"
-                    Point2="0,18.9230769230771"
-                    Point3="4,18.9230769230771" />
+                    Point1="0,14.9440327114748"
+                    Point2="0,18.9440327114748"
+                    Point3="4,18.9440327114748" />
                   <mssgle:LineSegment
-                    End="134.285714285714,18.9230769230771" />
+                    End="132.619047619047,18.9440327114748" />
                   <mssgle:CubicBezierSegment
-                    Point1="134.285714285714,18.9230769230771"
-                    Point2="138.285714285714,18.9230769230771"
-                    Point3="138.285714285714,22.9230769230771" />
+                    Point1="132.619047619047,18.9440327114748"
+                    Point2="136.619047619047,18.9440327114748"
+                    Point3="136.619047619047,22.9440327114748" />
                   <mssgle:LineSegment
-                    End="138.285714285714,39.3571428571433" />
+                    End="136.619047619047,39.3571428571433" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="53.901509486607,23.9230769230771,30.4826953125,9.7490234375"
+              BoundingBox="53.0681761532737,23.9440327114748,30.4826953125,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FCH - Process anemometer data.PrecedenceConstraints[Constraint 2]"
+          Id="Package\FCH - Process SI1145 data.PrecedenceConstraints[Constraint 2]"
           TopLeft="325.357142857143,345.714285714286">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -1334,7 +1291,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FCH - Process anemometer data.PrecedenceConstraints[Constraint 3]"
+          Id="Package\FCH - Process SI1145 data.PrecedenceConstraints[Constraint 3]"
           TopLeft="560.357142857143,419.714285714286">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -1370,7 +1327,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FCH - Process anemometer data.PrecedenceConstraints[Constraint 4]"
+          Id="Package\FCH - Process SI1145 data.PrecedenceConstraints[Constraint 4]"
           TopLeft="239.357142857143,41.4285714285712">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -1392,8 +1349,8 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FCH - Process anemometer data.PrecedenceConstraints[Constraint 5]"
-          TopLeft="385.607142857143,59.8571428571426">
+          Id="Package\FCH - Process SI1145 data.PrecedenceConstraints[Constraint 5]"
+          TopLeft="388.607142857143,59.8571428571426">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1418,7 +1375,7 @@
           IsExpanded="True"
           PanelSize="809,561"
           Size="809,604"
-          Id="Package\FCH - Process anemometer data"
+          Id="Package\FCH - Process SI1145 data"
           TopLeft="63.4999999999999,115.5" />
         <NodeLayout
           Size="229,42"
@@ -1476,28 +1433,28 @@
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\FCH - Process anemometer data\DFT - Process anemometer data file">
+    design-time-name="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file">
     <LayoutInfo>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="192,42"
-          Id="Package\FCH - Process anemometer data\DFT - Process anemometer data file\DER - Add audit column"
+          Id="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\DER - Add audit column"
           TopLeft="204,225" />
         <NodeLayout
           Size="182,42"
-          Id="Package\FCH - Process anemometer data\DFT - Process anemometer data file\CNT - Rows extracted"
+          Id="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\CNT - Rows extracted"
           TopLeft="204,150" />
         <NodeLayout
-          Size="240,42"
-          Id="Package\FCH - Process anemometer data\DFT - Process anemometer data file\FLT SRC - anemometer source file"
+          Size="214,42"
+          Id="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\FLT SRC - SI1145 source file"
           TopLeft="188,68" />
         <NodeLayout
-          Size="269,42"
-          Id="Package\FCH - Process anemometer data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer"
+          Size="243,42"
+          Id="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\OLE DST - Sensor DB table SI1145"
           TopLeft="174,304" />
         <EdgeLayout
-          Id="Package\FCH - Process anemometer data\DFT - Process anemometer data file.Paths[Row Count Output 1]"
+          Id="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file.Paths[Row Count Output 1]"
           TopLeft="297.5,192">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -1519,31 +1476,19 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FCH - Process anemometer data\DFT - Process anemometer data file.Paths[Flat File Source Output]"
-          TopLeft="308,110">
+          Id="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file.Paths[Flat File Source Output]"
+          TopLeft="295,110">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-13,40"
+              EndConnector="0,40"
               Start="0,0"
-              End="-13,32.5">
+              End="0,32.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16"
-                    Point2="0,20"
-                    Point3="-4,20" />
-                  <mssgle:LineSegment
-                    End="-9,20" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-9,20"
-                    Point2="-13,20"
-                    Point3="-13,24" />
-                  <mssgle:LineSegment
-                    End="-13,32.5" />
+                    End="0,32.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1553,31 +1498,19 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FCH - Process anemometer data\DFT - Process anemometer data file.Paths[Derived Column Output]"
-          TopLeft="300,267">
+          Id="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file.Paths[Derived Column Output]"
+          TopLeft="297.75,267">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="8.5,37"
+              EndConnector="0,37"
               Start="0,0"
-              End="8.5,29.5">
+              End="0,29.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,14.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,14.5"
-                    Point2="0,18.5"
-                    Point3="4,18.5" />
-                  <mssgle:LineSegment
-                    End="4.5,18.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="4.5,18.5"
-                    Point2="8.5,18.5"
-                    Point3="8.5,22.5" />
-                  <mssgle:LineSegment
-                    End="8.5,29.5" />
+                    End="0,29.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1590,7 +1523,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\FCH - Process anemometer data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer">
+    design-time-name="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\OLE DST - Sensor DB table SI1145">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1603,31 +1536,31 @@
     </Properties>
   </PipelineComponentMetadata>
   <DtsEventHandler
-    design-time-name="Package\FCH - Process anemometer data\SQC - Perform error actions\FST - Move file to error dir.EventHandlers[OnPreExecute]">
+    design-time-name="Package\FCH - Process SI1145 data\SQC - Perform error actions\FST - Move file to error dir.EventHandlers[OnPreExecute]">
     <LayoutInfo>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
           Size="223,42"
-          Id="Package\FCH - Process anemometer data\SQC - Perform error actions\FST - Move file to error dir.EventHandlers[OnPreExecute]\SQL - Set success field to false"
+          Id="Package\FCH - Process SI1145 data\SQC - Perform error actions\FST - Move file to error dir.EventHandlers[OnPreExecute]\SQL - Set success field to false"
           TopLeft="296,168" />
       </GraphLayout>
     </LayoutInfo>
   </DtsEventHandler>
   <DtsEventHandler
-    design-time-name="Package\FCH - Process anemometer data\SQC - Perform success actions\FST - Move file to processed dir.EventHandlers[OnPostExecute]">
+    design-time-name="Package\FCH - Process SI1145 data\SQC - Perform success actions\FST - Move file to processed dir.EventHandlers[OnPostExecute]">
     <LayoutInfo>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
           Size="221,42"
-          Id="Package\FCH - Process anemometer data\SQC - Perform success actions\FST - Move file to processed dir.EventHandlers[OnPostExecute]\SQL - Set success field to true"
+          Id="Package\FCH - Process SI1145 data\SQC - Perform success actions\FST - Move file to processed dir.EventHandlers[OnPostExecute]\SQL - Set success field to true"
           TopLeft="357.5,132.5" />
       </GraphLayout>
     </LayoutInfo>
   </DtsEventHandler>
   <PrecedenceConstraint
-    design-time-name="Package\FCH - Process anemometer data.PrecedenceConstraints[Constraint]">
+    design-time-name="Package\FCH - Process SI1145 data.PrecedenceConstraints[Constraint]">
     <ShowAnnotation>ConstraintOptions</ShowAnnotation>
   </PrecedenceConstraint>
 </Objects>]]></DTS:DesignTimeProperties>

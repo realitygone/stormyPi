@@ -1,4 +1,4 @@
-﻿CREATE TABLE [staging.[SI1145] (
+﻿CREATE TABLE [staging].[SI1145] (
 	[System_timestamp] DATETIME2(7) NULL,
 	[Vis] INT,
 	[IR] INT,
