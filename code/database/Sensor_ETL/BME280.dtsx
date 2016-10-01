@@ -1,0 +1,1623 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/1/2016 8:55:05 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MEJIS"
+  DTS:CreatorName="HOME\mike"
+  DTS:DTSID="{EA70AE23-CC24-48FE-A4FB-FE378BD909CC}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.2150.2"
+  DTS:LocaleID="3081"
+  DTS:MaxErrorCount="999"
+  DTS:ObjectName="BME280"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="62"
+  DTS:VersionGUID="{7F926CB3-CCFB-4A98-AA0B-FFB05C0652BA}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[BME280 data file connection]"
+      DTS:CreationName="FLATFILE"
+      DTS:DelayValidation="True"
+      DTS:DTSID="{ED8A6904-83BD-4429-9B7B-9861BF8BB03F}"
+      DTS:ObjectName="BME280 data file connection">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::Data_source_filename]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="3081"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="28"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SYSTEM_TIMESTAMP"
+              DTS:DTSID="{7E9A960B-8B82-475E-8DF6-470F4E237F48}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SENSOR_TIMESTAMP"
+              DTS:DTSID="{F3F0804B-A713-4965-82F4-8BCB8EF93FB2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SENSOR_TEMP"
+              DTS:DTSID="{DB5043D5-3427-4413-B05E-BCB7A3CCF8F0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SENSOR_PRESSURE"
+              DTS:DTSID="{00AA5971-D6F6-406B-9355-C4E36CB35B5E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SENSOR_HUMIDITY"
+              DTS:DTSID="{828F224D-E3CF-49C4-80B9-D5CBD7BD1D0E}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="3"
+      DTS:DTSID="{612C558B-9014-441D-9864-F45FB800C737}"
+      DTS:ObjectName="Master_audit_key"
+      DTS:Required="True">
+      <DTS:Property
+        DTS:DataType="3"
+        DTS:Name="ParameterValue">0</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A04D75AB-B2A0-4B71-A9D8-F1EF4E3A4ECC}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Data_source_filename">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{16F57C2C-FF65-41F1-AF5A-7DA9B0ADECB4}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Number_of_files_errored">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2396E5F1-82FD-46CC-84ED-0C0374F9F37E}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Number_of_files_processed">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A332F91F-66D7-4127-AB65-AAEE4824EB58}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Number_of_files_successful">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{59239220-0BC0-4445-AF9F-3E9BD38160B9}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Package_audit_key">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\FCH - Process BME280 data"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="BME280"
+      DTS:DTSID="{4766cfd9-8be9-40c6-b62b-37a73389271b}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:MaxErrorCount="999"
+      DTS:ObjectName="FCH - Process BME280 data">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachFileEnumerator"
+        DTS:DTSID="{f4f4a4c6-0645-4d0a-9715-6fe44f95eb5a}"
+        DTS:ObjectName="{6A22D1A2-99CD-45FE-87D2-89A5E5346F78}">
+        <DTS:PropertyExpression
+          DTS:Name="Directory">@[$Project::Data_source_directory]</DTS:PropertyExpression>
+        <DTS:ObjectData>
+          <ForEachFileEnumeratorProperties>
+            <FEFEProperty
+              Folder="D:\Users\mike.HOME\Documents\projects\data\incoming" />
+            <FEFEProperty
+              FileSpec="BME280*.csv" />
+            <FEFEProperty
+              FileNameRetrievalType="0" />
+            <FEFEProperty
+              Recurse="0" />
+          </ForEachFileEnumeratorProperties>
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{dc9cc242-33bd-4b71-a2e8-dfde88755315}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="User"
+          DTS:ObjectName="Rows_extracted">
+          <DTS:VariableValue
+            DTS:DataType="3">0</DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{72721584-bd92-4f99-accb-cec08bfdc8a5}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="User"
+          DTS:ObjectName="Task_audit_key">
+          <DTS:VariableValue
+            DTS:DataType="3">0</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{3afdebe7-056c-415f-9bb0-be913b25a9cf}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DFT - Process BME280 data file"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\CNT - Rows extracted"
+                  componentClassID="Microsoft.RowCount"
+                  contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+                  name="CNT - Rows extracted">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable to hold the row count."
+                      name="VariableName">User::Rows_extracted</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\CNT - Rows extracted.Inputs[Row Count Input 1]"
+                      hasSideEffects="true"
+                      name="Row Count Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\CNT - Rows extracted.Outputs[Row Count Output 1]"
+                      name="Row Count Output 1"
+                      synchronousInputId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\CNT - Rows extracted.Inputs[Row Count Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\DER - Add audit column"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="DER - Add audit column"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\DER - Add audit column.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\DER - Add audit column.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\DER - Add audit column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\DER - Add audit column.Outputs[Derived Column Output].Columns[Insert_audit_key]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\DER - Add audit column.Outputs[Derived Column Output].Columns[Insert_audit_key]"
+                          name="Insert_audit_key"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">@[User::Task_audit_key]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">@[User::Task_audit_key]</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\DER - Add audit column.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\DER - Add audit column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\DER - Add audit column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\DER - Add audit column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\DER - Add audit column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\DER - Add audit column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="3081"
+                  name="FLT SRC - BME280 source file"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">true</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[BME280 data file connection]"
+                      connectionManagerRefId="Package.ConnectionManagers[BME280 data file connection]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output].Columns[SYSTEM_TIMESTAMP]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output].ExternalColumns[SYSTEM_TIMESTAMP]"
+                          length="28"
+                          lineageId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output].Columns[SYSTEM_TIMESTAMP]"
+                          name="SYSTEM_TIMESTAMP"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output].Columns[SENSOR_TIMESTAMP]"
+                          dataType="r4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output].ExternalColumns[SENSOR_TIMESTAMP]"
+                          lineageId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output].Columns[SENSOR_TIMESTAMP]"
+                          name="SENSOR_TIMESTAMP"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output].Columns[SENSOR_TEMP]"
+                          dataType="r4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output].ExternalColumns[SENSOR_TEMP]"
+                          lineageId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output].Columns[SENSOR_TEMP]"
+                          name="SENSOR_TEMP"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output].Columns[SENSOR_PRESSURE]"
+                          dataType="r4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output].ExternalColumns[SENSOR_PRESSURE]"
+                          lineageId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output].Columns[SENSOR_PRESSURE]"
+                          name="SENSOR_PRESSURE"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output].Columns[SENSOR_HUMIDITY]"
+                          dataType="r4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output].ExternalColumns[SENSOR_HUMIDITY]"
+                          lineageId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output].Columns[SENSOR_HUMIDITY]"
+                          name="SENSOR_HUMIDITY"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output].ExternalColumns[SYSTEM_TIMESTAMP]"
+                          codePage="1252"
+                          dataType="str"
+                          length="28"
+                          name="SYSTEM_TIMESTAMP" />
+                        <externalMetadataColumn
+                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output].ExternalColumns[SENSOR_TIMESTAMP]"
+                          dataType="r4"
+                          name="SENSOR_TIMESTAMP" />
+                        <externalMetadataColumn
+                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output].ExternalColumns[SENSOR_TEMP]"
+                          dataType="r4"
+                          name="SENSOR_TEMP" />
+                        <externalMetadataColumn
+                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output].ExternalColumns[SENSOR_PRESSURE]"
+                          dataType="r4"
+                          name="SENSOR_PRESSURE" />
+                        <externalMetadataColumn
+                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output].ExternalColumns[SENSOR_HUMIDITY]"
+                          dataType="r4"
+                          name="SENSOR_HUMIDITY" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DST - Sensor DB table BME280"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[staging].[BME280]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Connections[OleDbConnection]"
+                      connectionManagerID="{BAFB3E71-BAF6-462F-A87F-5E1F8D40E45C}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[stormyPi_Sensors]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Inputs[OLE DB Destination Input].Columns[SENSOR_TIMESTAMP]"
+                          cachedDataType="r4"
+                          cachedName="SENSOR_TIMESTAMP"
+                          externalMetadataColumnId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Inputs[OLE DB Destination Input].ExternalColumns[Sensor_timestamp]"
+                          lineageId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output].Columns[SENSOR_TIMESTAMP]" />
+                        <inputColumn
+                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Inputs[OLE DB Destination Input].Columns[SENSOR_TEMP]"
+                          cachedDataType="r4"
+                          cachedName="SENSOR_TEMP"
+                          externalMetadataColumnId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Inputs[OLE DB Destination Input].ExternalColumns[Temperature_celcius]"
+                          lineageId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output].Columns[SENSOR_TEMP]" />
+                        <inputColumn
+                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Inputs[OLE DB Destination Input].Columns[SYSTEM_TIMESTAMP]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="28"
+                          cachedName="SYSTEM_TIMESTAMP"
+                          externalMetadataColumnId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Inputs[OLE DB Destination Input].ExternalColumns[System_timestamp]"
+                          lineageId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output].Columns[SYSTEM_TIMESTAMP]" />
+                        <inputColumn
+                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Inputs[OLE DB Destination Input].Columns[SENSOR_PRESSURE]"
+                          cachedDataType="r4"
+                          cachedName="SENSOR_PRESSURE"
+                          externalMetadataColumnId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Inputs[OLE DB Destination Input].ExternalColumns[Barometric_pressure]"
+                          lineageId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output].Columns[SENSOR_PRESSURE]" />
+                        <inputColumn
+                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Inputs[OLE DB Destination Input].Columns[SENSOR_HUMIDITY]"
+                          cachedDataType="r4"
+                          cachedName="SENSOR_HUMIDITY"
+                          externalMetadataColumnId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Inputs[OLE DB Destination Input].ExternalColumns[Humidity]"
+                          lineageId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output].Columns[SENSOR_HUMIDITY]" />
+                        <inputColumn
+                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Inputs[OLE DB Destination Input].Columns[Insert_audit_key]"
+                          cachedDataType="i4"
+                          cachedName="Insert_audit_key"
+                          externalMetadataColumnId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Inputs[OLE DB Destination Input].ExternalColumns[Insert_audit_key]"
+                          lineageId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\DER - Add audit column.Outputs[Derived Column Output].Columns[Insert_audit_key]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Inputs[OLE DB Destination Input].ExternalColumns[System_timestamp]"
+                          dataType="dbTimeStamp2"
+                          name="System_timestamp"
+                          scale="7" />
+                        <externalMetadataColumn
+                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Inputs[OLE DB Destination Input].ExternalColumns[Sensor_timestamp]"
+                          dataType="i4"
+                          name="Sensor_timestamp" />
+                        <externalMetadataColumn
+                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Inputs[OLE DB Destination Input].ExternalColumns[Temperature_celcius]"
+                          dataType="numeric"
+                          name="Temperature_celcius"
+                          precision="6"
+                          scale="3" />
+                        <externalMetadataColumn
+                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Inputs[OLE DB Destination Input].ExternalColumns[Barometric_pressure]"
+                          dataType="numeric"
+                          name="Barometric_pressure"
+                          precision="10"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Inputs[OLE DB Destination Input].ExternalColumns[Humidity]"
+                          dataType="numeric"
+                          name="Humidity"
+                          precision="5"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Inputs[OLE DB Destination Input].ExternalColumns[Insert_audit_key]"
+                          dataType="i4"
+                          name="Insert_audit_key" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file.Paths[Derived Column Output]"
+                  endId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Inputs[OLE DB Destination Input]"
+                  name="Derived Column Output"
+                  startId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\DER - Add audit column.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file.Paths[Flat File Source Output]"
+                  endId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\CNT - Rows extracted.Inputs[Row Count Input 1]"
+                  name="Flat File Source Output"
+                  startId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output]" />
+                <path
+                  refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file.Paths[Row Count Output 1]"
+                  endId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\DER - Add audit column.Inputs[Derived Column Input]"
+                  name="Row Count Output 1"
+                  startId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\CNT - Rows extracted.Outputs[Row Count Output 1]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\FCH - Process BME280 data\EXP - Increment file count"
+          DTS:CreationName="Microsoft.ExpressionTask"
+          DTS:Description="Expression Task"
+          DTS:DTSID="{61FE846C-E170-42CD-BACE-75755788A240}"
+          DTS:ExecutableType="Microsoft.ExpressionTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="EXP - Increment file count"
+          DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="6">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExpressionTask
+              Expression="@[User::Number_of_files_processed] = @[User::Number_of_files_processed] + 1" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\FCH - Process BME280 data\SQC - Perform error actions"
+          DTS:CreationName="STOCK:SEQUENCE"
+          DTS:Description="Sequence Container"
+          DTS:DTSID="{C184F751-34B9-409F-974A-258EB624C9D3}"
+          DTS:ExecutableType="STOCK:SEQUENCE"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SQC - Perform error actions">
+          <DTS:Variables />
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\FCH - Process BME280 data\SQC - Perform error actions\EXP - Increment error file count"
+              DTS:CreationName="Microsoft.ExpressionTask"
+              DTS:Description="Expression Task"
+              DTS:DTSID="{b19f809b-2dc6-4c97-b712-20317b46b190}"
+              DTS:ExecutableType="Microsoft.ExpressionTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="EXP - Increment error file count"
+              DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <ExpressionTask
+                  Expression="@[User::Number_of_files_errored] = @[User::Number_of_files_errored] + 1" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\FCH - Process BME280 data\SQC - Perform error actions\FST - Move file to error dir"
+              DTS:CreationName="Microsoft.FileSystemTask"
+              DTS:DelayValidation="True"
+              DTS:Description="File System Task"
+              DTS:DTSID="{fc9279a7-6a4d-4d92-8349-7fd3ae0442ab}"
+              DTS:ExecutableType="Microsoft.FileSystemTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="FST - Move file to error dir"
+              DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:EventHandlers>
+                <DTS:EventHandler
+                  DTS:refId="Package\FCH - Process BME280 data\SQC - Perform error actions\FST - Move file to error dir.EventHandlers[OnPreExecute]"
+                  DTS:CreationName="OnPreExecute"
+                  DTS:DTSID="{5a7ac7d9-04d3-4124-8721-ca38783126e5}"
+                  DTS:EventID="0"
+                  DTS:EventName="OnPreExecute"
+                  DTS:LocaleID="-1">
+                  <DTS:Variables>
+                    <DTS:Variable
+                      DTS:CreationName=""
+                      DTS:Description="The propagate property of the event"
+                      DTS:DTSID="{a2969f65-8f11-4b2b-a53b-2a5fb1fc9c59}"
+                      DTS:IncludeInDebugDump="6789"
+                      DTS:Namespace="System"
+                      DTS:ObjectName="Propagate">
+                      <DTS:VariableValue
+                        DTS:DataType="11">-1</DTS:VariableValue>
+                    </DTS:Variable>
+                  </DTS:Variables>
+                  <DTS:Executables>
+                    <DTS:Executable
+                      DTS:refId="Package\FCH - Process BME280 data\SQC - Perform error actions\FST - Move file to error dir.EventHandlers[OnPreExecute]\SQL - Set success field to false"
+                      DTS:CreationName="Microsoft.ExecuteSQLTask"
+                      DTS:Description="Execute SQL Task"
+                      DTS:DTSID="{d00c48ab-bc29-4c53-93db-7d2152fd7599}"
+                      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+                      DTS:LocaleID="-1"
+                      DTS:ObjectName="SQL - Set success field to false"
+                      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+                      <DTS:Variables />
+                      <DTS:ObjectData>
+                        <SQLTask:SqlTaskData
+                          SQLTask:Connection="{BAFB3E71-BAF6-462F-A87F-5E1F8D40E45C}"
+                          SQLTask:SqlStatementSource="UPDATE [log].[etl_executions]&#xA;SET Success = 0&#xA;WHERE [Audit_key]=?;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                          <SQLTask:ParameterBinding
+                            SQLTask:ParameterName="0"
+                            SQLTask:DtsVariableName="User::Task_audit_key"
+                            SQLTask:ParameterDirection="Input"
+                            SQLTask:DataType="3"
+                            SQLTask:ParameterSize="-1" />
+                        </SQLTask:SqlTaskData>
+                      </DTS:ObjectData>
+                    </DTS:Executable>
+                  </DTS:Executables>
+                </DTS:EventHandler>
+              </DTS:EventHandlers>
+              <DTS:ObjectData>
+                <FileSystemData
+                  TaskOperationType="MoveFile"
+                  TaskOverwriteDestFile="True"
+                  TaskSourcePath="User::Data_source_filename"
+                  TaskIsSourceVariable="True"
+                  TaskDestinationPath="$Project::Error_file_directory"
+                  TaskIsDestinationVariable="True" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\FCH - Process BME280 data\SQC - Perform success actions"
+          DTS:CreationName="STOCK:SEQUENCE"
+          DTS:Description="Sequence Container"
+          DTS:DTSID="{73E13A7D-A26B-4163-8BCE-CF9B0BB809ED}"
+          DTS:ExecutableType="STOCK:SEQUENCE"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SQC - Perform success actions">
+          <DTS:Variables />
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\FCH - Process BME280 data\SQC - Perform success actions\EXP - Increment success file count"
+              DTS:CreationName="Microsoft.ExpressionTask"
+              DTS:Description="Expression Task"
+              DTS:DTSID="{7b6061be-f5c3-4ca4-94a1-3616452c1e86}"
+              DTS:ExecutableType="Microsoft.ExpressionTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="EXP - Increment success file count"
+              DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="4">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <ExpressionTask
+                  Expression="@[User::Number_of_files_successful] = @[User::Number_of_files_successful] + 1" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\FCH - Process BME280 data\SQC - Perform success actions\FST - Move file to processed dir"
+              DTS:CreationName="Microsoft.FileSystemTask"
+              DTS:DelayValidation="True"
+              DTS:Description="File System Task"
+              DTS:DTSID="{4801ffa7-c565-4544-b45e-e4890a39db16}"
+              DTS:ExecutableType="Microsoft.FileSystemTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="FST - Move file to processed dir"
+              DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="3">
+              <DTS:Variables />
+              <DTS:EventHandlers>
+                <DTS:EventHandler
+                  DTS:refId="Package\FCH - Process BME280 data\SQC - Perform success actions\FST - Move file to processed dir.EventHandlers[OnPostExecute]"
+                  DTS:CreationName="OnPostExecute"
+                  DTS:DTSID="{efd2e602-1a4b-418c-83d4-836738126512}"
+                  DTS:EventID="0"
+                  DTS:EventName="OnPostExecute"
+                  DTS:LocaleID="-1">
+                  <DTS:Variables>
+                    <DTS:Variable
+                      DTS:CreationName=""
+                      DTS:Description="The propagate property of the event"
+                      DTS:DTSID="{49b6adeb-5941-441f-8c23-b5b07c0e24cf}"
+                      DTS:IncludeInDebugDump="6789"
+                      DTS:Namespace="System"
+                      DTS:ObjectName="Propagate">
+                      <DTS:VariableValue
+                        DTS:DataType="11">-1</DTS:VariableValue>
+                    </DTS:Variable>
+                  </DTS:Variables>
+                  <DTS:Executables>
+                    <DTS:Executable
+                      DTS:refId="Package\FCH - Process BME280 data\SQC - Perform success actions\FST - Move file to processed dir.EventHandlers[OnPostExecute]\SQL - Set success field to true"
+                      DTS:CreationName="Microsoft.ExecuteSQLTask"
+                      DTS:Description="Execute SQL Task"
+                      DTS:DTSID="{03417770-a3f3-4df7-be94-f18a6d957ddb}"
+                      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+                      DTS:LocaleID="-1"
+                      DTS:ObjectName="SQL - Set success field to true"
+                      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+                      <DTS:Variables />
+                      <DTS:ObjectData>
+                        <SQLTask:SqlTaskData
+                          SQLTask:Connection="{BAFB3E71-BAF6-462F-A87F-5E1F8D40E45C}"
+                          SQLTask:SqlStatementSource="UPDATE [log].[etl_executions]&#xA;SET Success = 1&#xA;WHERE [Audit_key]=?;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                          <SQLTask:ParameterBinding
+                            SQLTask:ParameterName="0"
+                            SQLTask:DtsVariableName="User::Task_audit_key"
+                            SQLTask:ParameterDirection="Input"
+                            SQLTask:DataType="3"
+                            SQLTask:ParameterSize="-1" />
+                        </SQLTask:SqlTaskData>
+                      </DTS:ObjectData>
+                    </DTS:Executable>
+                  </DTS:Executables>
+                </DTS:EventHandler>
+              </DTS:EventHandlers>
+              <DTS:ObjectData>
+                <FileSystemData
+                  TaskOperationType="MoveFile"
+                  TaskOverwriteDestFile="True"
+                  TaskSourcePath="User::Data_source_filename"
+                  TaskIsSourceVariable="True"
+                  TaskDestinationPath="$Project::Processed_directory"
+                  TaskIsDestinationVariable="True" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\FCH - Process BME280 data\SQC - Perform success actions\SQL - Move data from staging table"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{92348191-5DE0-4EC4-BE6A-A48910A3DB20}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="SQL - Move data from staging table"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="2">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{BAFB3E71-BAF6-462F-A87F-5E1F8D40E45C}"
+                  SQLTask:SqlStatementSource="INSERT INTO [dbo].[BME280] (&#xA;&#x9;[System_timestamp],&#xA;&#x9;[Sensor_timestamp],&#xA;&#x9;[Temperature_celcius],&#xA;&#x9;[Barometric_pressure],&#xA;&#x9;[Humidity]&#xA;)&#xA;SELECT [System_timestamp],&#xA;&#x9;[Sensor_timestamp],&#xA;&#x9;[Temperature_celcius],&#xA;&#x9;[Barometric_pressure],&#xA;&#x9;[Humidity]&#xA;FROM [staging].[BME280];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\FCH - Process BME280 data\SQL - Create task audit row"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{31ddc3b1-73c6-49ef-aeba-e6e5ac058b06}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SQL - Create task audit row"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{BAFB3E71-BAF6-462F-A87F-5E1F8D40E45C}"
+              SQLTask:SqlStatementSource="INSERT INTO [log].[etl_executions] (&#xA; [Parent_audit_key],&#xA; [Task_name],&#xA; [File_name],&#xA; [Row_count_start],&#xA; [Execution_GUID]&#xA;)&#xA;VALUES (&#xA; ?,&#xA; ? + ' data file',&#xA; ?,&#xA; ( SELECT COUNT(*) FROM [dbo].[BME280] ),&#xA; ?&#xA;);&#xA;&#xA;SELECT SCOPE_IDENTITY() AS Task_audit_key;"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="0"
+                SQLTask:DtsVariableName="User::Task_audit_key" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::Package_audit_key"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::Data_source_filename"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\FCH - Process BME280 data\SQL - Finalise task audit row"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{f4bd3e5b-6a6e-420c-a69f-58f8660e1821}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SQL - Finalise task audit row"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="5">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{BAFB3E71-BAF6-462F-A87F-5E1F8D40E45C}"
+              SQLTask:SqlStatementSource="UPDATE [log].[etl_executions]&#xA;SET Processing_end=SYSDATETIME(),&#xA;&#x9;Row_count_end=(&#xA;&#x9;&#x9;SELECT COUNT(*)&#xA;&#x9;&#x9;FROM [dbo].[BME280]&#xA;&#x9;),&#xA;&#x9;Items_processed=?&#xA;WHERE [Audit_key]=?;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::Rows_extracted"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::Task_audit_key"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\FCH - Process BME280 data\SQL - Truncate staging table"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{C8495E75-A3CB-4913-8D91-B8D586DC45C3}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SQL - Truncate staging table"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{BAFB3E71-BAF6-462F-A87F-5E1F8D40E45C}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE [staging].[BME280];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\FCH - Process BME280 data.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{F951D8B8-DA4B-4D07-9452-77DDFCDB3755}"
+          DTS:From="Package\FCH - Process BME280 data\DFT - Process BME280 data file"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\FCH - Process BME280 data\SQC - Perform success actions" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\FCH - Process BME280 data.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{F62A25FC-79AE-42CE-8E81-60CF62181155}"
+          DTS:From="Package\FCH - Process BME280 data\DFT - Process BME280 data file"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\FCH - Process BME280 data\SQC - Perform error actions"
+          DTS:Value="1" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\FCH - Process BME280 data.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{F8339415-04D6-4C4C-886E-26A687F75F5C}"
+          DTS:From="Package\FCH - Process BME280 data\SQC - Perform success actions"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\FCH - Process BME280 data\SQL - Finalise task audit row"
+          DTS:Value="2" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\FCH - Process BME280 data.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{01D58C23-906F-451A-964E-142EEF27F1DF}"
+          DTS:From="Package\FCH - Process BME280 data\SQC - Perform error actions"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\FCH - Process BME280 data\SQL - Finalise task audit row"
+          DTS:Value="2" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\FCH - Process BME280 data.PrecedenceConstraints[Constraint 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{47AB3E64-A81A-4CB4-BD83-2F86A29A9FB1}"
+          DTS:From="Package\FCH - Process BME280 data\SQL - Create task audit row"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 4"
+          DTS:To="Package\FCH - Process BME280 data\SQL - Truncate staging table" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\FCH - Process BME280 data.PrecedenceConstraints[Constraint 5]"
+          DTS:CreationName=""
+          DTS:DTSID="{F1B72EAE-8491-4817-9DDA-B04233E0CB59}"
+          DTS:From="Package\FCH - Process BME280 data\SQL - Truncate staging table"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 5"
+          DTS:To="Package\FCH - Process BME280 data\DFT - Process BME280 data file" />
+      </DTS:PrecedenceConstraints>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{B1807F36-4CF9-4ABE-AF3B-04624C5B4003}"
+          DTS:ObjectName="{B1807F36-4CF9-4ABE-AF3B-04624C5B4003}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::Data_source_filename" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL - Create package audit row"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{B3CCBFA2-82F4-45B0-8552-6511AE44C1A7}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL - Create package audit row"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{BAFB3E71-BAF6-462F-A87F-5E1F8D40E45C}"
+          SQLTask:SqlStatementSource="INSERT INTO [log].[etl_executions] (&#xA;&#x9;[Parent_audit_key],&#xA;&#x9;[Task_name],&#xA;&#x9;[Row_count_start],&#xA;&#x9;[Execution_GUID]&#xA;)&#xA;VALUES (&#xA;&#x9;?,&#xA;&#x9;?,&#xA;&#x9;(SELECT COUNT(*) FROM [dbo].[BME280]),&#xA;&#x9;?&#xA;);&#xA;&#xA;SELECT SCOPE_IDENTITY() AS Package_audit_key;"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::Package_audit_key" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="$Package::Master_audit_key"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="System::PackageName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL - Finalise package audit row"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{7E7229CB-D761-4C85-9CDA-2D224B6CF154}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL - Finalise package audit row"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{BAFB3E71-BAF6-462F-A87F-5E1F8D40E45C}"
+          SQLTask:SqlStatementSource="UPDATE [log].[etl_executions]&#xA;SET Processing_end=SYSDATETIME(),&#xA;&#x9;Row_count_end=(SELECT COUNT(*) FROM [dbo].[BME280]),&#xA;&#x9;Success=1,&#xA;&#x9;Items_processed=?,&#xA;&#x9;Items_successful=?,&#xA;&#x9;Items_error=?&#xA;WHERE Audit_key=?;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::Number_of_files_processed"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::Number_of_files_successful"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::Number_of_files_errored"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="3"
+            SQLTask:DtsVariableName="User::Package_audit_key"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{1F5C9E89-7428-4633-8284-106E56C92E2C}"
+      DTS:From="Package\SQL - Create package audit row"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\FCH - Process BME280 data" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{5773B5BF-B76F-4FF0-8D85-377A570065DE}"
+      DTS:From="Package\FCH - Process BME280 data"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\SQL - Finalise package audit row" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="227,42"
+          Id="Package\FCH - Process BME280 data\DFT - Process BME280 data file"
+          TopLeft="277.071428571429,99.8571428571427" />
+        <NodeLayout
+          Size="209,42"
+          Id="Package\FCH - Process BME280 data\SQL - Create task audit row"
+          TopLeft="30.3571428571429,22.9999999999998" />
+        <NodeLayout
+          Size="213,42"
+          Id="Package\FCH - Process BME280 data\SQL - Finalise task audit row"
+          TopLeft="424.071428571429,460.714285714285" />
+        <NodeLayout
+          Size="214,42"
+          Id="Package\FCH - Process BME280 data\SQL - Truncate staging table"
+          TopLeft="282.142857142857,17.8571428571426" />
+        <EdgeLayout
+          Id="Package\FCH - Process BME280 data.PrecedenceConstraints[Constraint 4]"
+          TopLeft="239.357142857143,41.4285714285712">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="42.7857142857142,0"
+              Start="0,0"
+              End="35.2857142857142,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="35.2857142857142,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FCH - Process BME280 data.PrecedenceConstraints[Constraint 5]"
+          TopLeft="389.857142857143,59.8571428571426">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.0000000000001"
+              Start="0,0"
+              End="0,32.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="246,42"
+          Id="Package\FCH - Process BME280 data\SQC - Perform success actions\SQL - Move data from staging table"
+          TopLeft="21.2142857142857,21.2142857142857" />
+        <NodeLayout
+          Size="228,42"
+          Id="Package\FCH - Process BME280 data\SQC - Perform success actions\FST - Move file to processed dir"
+          TopLeft="27.7380952380953,97.5238095238094" />
+        <NodeLayout
+          Size="242,42"
+          Id="Package\FCH - Process BME280 data\SQC - Perform success actions\EXP - Increment success file count"
+          TopLeft="31.0238095238096,173.833333333333" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="298,271"
+          Size="298,314"
+          Id="Package\FCH - Process BME280 data\SQC - Perform success actions"
+          TopLeft="27.3571428571429,188.714285714286" />
+        <EdgeLayout
+          Id="Package\FCH - Process BME280 data.PrecedenceConstraints[Constraint 2]"
+          TopLeft="325.357142857143,345.714285714286">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="98.7142857142858,136"
+              Start="0,0"
+              End="91.2142857142858,136">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="45.3571428571429,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="45.3571428571429,0"
+                    Point2="49.3571428571429,0"
+                    Point3="49.3571428571429,4" />
+                  <mssgle:LineSegment
+                    End="49.3571428571429,132" />
+                  <mssgle:CubicBezierSegment
+                    Point1="49.3571428571429,132"
+                    Point2="49.3571428571429,136"
+                    Point3="53.3571428571429,136" />
+                  <mssgle:LineSegment
+                    End="91.2142857142858,136" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="24.0526897321429,-17.609375,50.60890625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="203,42"
+          Id="Package\FCH - Process BME280 data\EXP - Increment file count"
+          TopLeft="563.785714285714,49.2857142857141" />
+        <NodeLayout
+          Size="229,42"
+          Id="Package\FCH - Process BME280 data\SQC - Perform error actions\EXP - Increment error file count"
+          TopLeft="25.5,24.0714285714286" />
+        <NodeLayout
+          Size="204,42"
+          Id="Package\FCH - Process BME280 data\SQC - Perform error actions\FST - Move file to error dir"
+          TopLeft="30.7142857142858,91.2142857142858" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="275,188"
+          Size="275,231"
+          Id="Package\FCH - Process BME280 data\SQC - Perform error actions"
+          TopLeft="422.857142857143,188.714285714286" />
+        <EdgeLayout
+          Id="Package\FCH - Process BME280 data.PrecedenceConstraints[Constraint]"
+          TopLeft="354.071428571429,141.857142857143">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-177.714285714286,46.8571428571429"
+              Start="0,0"
+              End="-177.714285714286,39.3571428571429">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.9396325459318" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.9396325459318"
+                    Point2="0,18.9396325459318"
+                    Point3="-4,18.9396325459318" />
+                  <mssgle:LineSegment
+                    End="-173.714285714286,18.9396325459318" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-173.714285714286,18.9396325459318"
+                    Point2="-177.714285714286,18.9396325459318"
+                    Point3="-177.714285714286,22.9396325459318" />
+                  <mssgle:LineSegment
+                    End="-177.714285714286,39.3571428571429" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-106.850385044643,23.9396325459318,35.986484375,9.5537109375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FCH - Process BME280 data.PrecedenceConstraints[Constraint 1]"
+          TopLeft="427.071428571429,141.857142857143">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="133.285714285714,46.8571428571429"
+              Start="0,0"
+              End="133.285714285714,39.3571428571429">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.9396325459318" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.9396325459318"
+                    Point2="0,18.9396325459318"
+                    Point3="4,18.9396325459318" />
+                  <mssgle:LineSegment
+                    End="129.285714285714,18.9396325459318" />
+                  <mssgle:CubicBezierSegment
+                    Point1="129.285714285714,18.9396325459318"
+                    Point2="133.285714285714,18.9396325459318"
+                    Point3="133.285714285714,22.9396325459318" />
+                  <mssgle:LineSegment
+                    End="133.285714285714,39.3571428571429" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="51.4015094866072,23.9396325459318,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FCH - Process BME280 data.PrecedenceConstraints[Constraint 3]"
+          TopLeft="560.357142857143,419.714285714286">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-29.7857142857142,40.9999999999997"
+              Start="0,0"
+              End="-29.7857142857142,33.4999999999997">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.4999999999999" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.4999999999999"
+                    Point2="0,20.4999999999999"
+                    Point3="-4,20.4999999999999" />
+                  <mssgle:LineSegment
+                    End="-25.7857142857142,20.4999999999999" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-25.7857142857142,20.4999999999999"
+                    Point2="-29.7857142857142,20.4999999999999"
+                    Point3="-29.7857142857142,24.4999999999999" />
+                  <mssgle:LineSegment
+                    End="-29.7857142857142,33.4999999999997" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-40.1973102678571,25.4999999999999,50.60890625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="809,561"
+          Size="809,604"
+          Id="Package\FCH - Process BME280 data"
+          TopLeft="63.4999999999999,115.5" />
+        <NodeLayout
+          Size="229,42"
+          Id="Package\SQL - Create package audit row"
+          TopLeft="358.357142857142,46.7142857142857" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="470.428571428571,88.7142857142857">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26.7857142857144"
+              Start="0,0"
+              End="0,19.2857142857144">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.2857142857144" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="233,42"
+          Id="Package\SQL - Finalise package audit row"
+          TopLeft="356.714285714285,761.428571428572" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="470.607142857143,719.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41.928571428572"
+              Start="0,0"
+              End="0,34.428571428572">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.428571428572" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\FCH - Process BME280 data\DFT - Process BME280 data file">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="218,42"
+          Id="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file"
+          TopLeft="188,68" />
+        <NodeLayout
+          Size="182,42"
+          Id="Package\FCH - Process BME280 data\DFT - Process BME280 data file\CNT - Rows extracted"
+          TopLeft="204,150" />
+        <NodeLayout
+          Size="248,42"
+          Id="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280"
+          TopLeft="174,304" />
+        <EdgeLayout
+          Id="Package\FCH - Process BME280 data\DFT - Process BME280 data file.Paths[Flat File Source Output]"
+          TopLeft="296,110">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40"
+              Start="0,0"
+              End="0,32.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="192,42"
+          Id="Package\FCH - Process BME280 data\DFT - Process BME280 data file\DER - Add audit column"
+          TopLeft="204,225" />
+        <EdgeLayout
+          Id="Package\FCH - Process BME280 data\DFT - Process BME280 data file.Paths[Row Count Output 1]"
+          TopLeft="297.5,192">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33"
+              Start="0,0"
+              End="0,25.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FCH - Process BME280 data\DFT - Process BME280 data file.Paths[Derived Column Output]"
+          TopLeft="299,267">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37"
+              Start="0,0"
+              End="0,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <DtsEventHandler
+    design-time-name="Package\FCH - Process BME280 data\SQC - Perform error actions\FST - Move file to error dir.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="223,42"
+          Id="Package\FCH - Process BME280 data\SQC - Perform error actions\FST - Move file to error dir.EventHandlers[OnPreExecute]\SQL - Set success field to false"
+          TopLeft="296,168" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package\FCH - Process BME280 data\SQC - Perform success actions\FST - Move file to processed dir.EventHandlers[OnPostExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="221,42"
+          Id="Package\FCH - Process BME280 data\SQC - Perform success actions\FST - Move file to processed dir.EventHandlers[OnPostExecute]\SQL - Set success field to true"
+          TopLeft="357.5,132.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <PrecedenceConstraint
+    design-time-name="Package\FCH - Process BME280 data.PrecedenceConstraints[Constraint]">
+    <ShowAnnotation>ConstraintOptions</ShowAnnotation>
+  </PrecedenceConstraint>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

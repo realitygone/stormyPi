@@ -59,10 +59,28 @@
     <Folder Include="Properties" />
     <Folder Include="Security" />
     <Folder Include="log" />
+    <Folder Include="dbo" />
+    <Folder Include="dbo\Tables" />
+    <Folder Include="log\Tables" />
+    <Folder Include="Staging" />
+    <Folder Include="Staging\Tables" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Security\log.sql" />
-    <Build Include="log\etl_executions.sql" />
-    <Build Include="log\etl_errors.sql" />
+    <Build Include="log\Tables\etl_executions.sql" />
+    <Build Include="log\Tables\etl_errors.sql" />
+    <Build Include="dbo\Tables\BME280.sql" />
+    <Build Include="dbo\Tables\Anemometer.sql" />
+    <Build Include="dbo\Tables\SI1145.sql" />
+    <Build Include="dbo\Tables\TSL2156.sql" />
+    <Build Include="log\Tables\etl_error_rows.sql" />
+    <Build Include="Security\staging.sql" />
+    <Build Include="Staging\Tables\Anemometer.sql" />
+    <Build Include="Staging\Tables\BME280.sql" />
+    <Build Include="Staging\Tables\SI1145.sql" />
+    <Build Include="Staging\Tables\TSL2156.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SqlSchemaCompare.scmp" />
   </ItemGroup>
 </Project>
