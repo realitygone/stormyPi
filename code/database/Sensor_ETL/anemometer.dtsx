@@ -1,29 +1,29 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="10/1/2016 8:55:05 AM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="MEJIS"
   DTS:CreatorName="HOME\mike"
-  DTS:DTSID="{EA70AE23-CC24-48FE-A4FB-FE378BD909CC}"
+  DTS:DTSID="{91DEB11E-10C7-403F-A65C-FFAB272C237F}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="13.0.2150.2"
   DTS:LocaleID="3081"
   DTS:MaxErrorCount="999"
-  DTS:ObjectName="BME280"
+  DTS:ObjectName="anemometer"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="62"
-  DTS:VersionGUID="{7F926CB3-CCFB-4A98-AA0B-FFB05C0652BA}">
+  DTS:VersionBuild="69"
+  DTS:VersionGUID="{EE3646F9-B9D1-41CE-A613-D933DD4A5CAA}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[BME280 data file connection]"
+      DTS:refId="Package.ConnectionManagers[anemometer data file connection]"
       DTS:CreationName="FLATFILE"
       DTS:DelayValidation="True"
-      DTS:DTSID="{ED8A6904-83BD-4429-9B7B-9861BF8BB03F}"
-      DTS:ObjectName="BME280 data file connection">
+      DTS:DTSID="{E6CC456E-4370-4634-9DA6-946B0BD89395}"
+      DTS:ObjectName="anemometer data file connection">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">@[User::Data_source_filename]</DTS:PropertyExpression>
       <DTS:ObjectData>
@@ -39,43 +39,42 @@
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="28"
-              DTS:DataType="129"
+              DTS:DataType="7"
               DTS:TextQualified="True"
               DTS:ObjectName="SYSTEM_TIMESTAMP"
-              DTS:DTSID="{7E9A960B-8B82-475E-8DF6-470F4E237F48}"
+              DTS:DTSID="{E3EF2F58-C00E-4A15-B8C7-E032EB2F5639}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SYSTEM_EPOCH_TIME"
+              DTS:DTSID="{06BB454B-4EE7-46A4-997A-928C0BA2A265}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SYSTEM_MILLISECONDS"
+              DTS:DTSID="{11596FE0-6F57-4312-8F91-0E8E8D96C0AA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
               DTS:DataType="4"
               DTS:TextQualified="True"
-              DTS:ObjectName="SENSOR_TIMESTAMP"
-              DTS:DTSID="{F3F0804B-A713-4965-82F4-8BCB8EF93FB2}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="4"
-              DTS:TextQualified="True"
-              DTS:ObjectName="SENSOR_TEMP"
-              DTS:DTSID="{DB5043D5-3427-4413-B05E-BCB7A3CCF8F0}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="4"
-              DTS:TextQualified="True"
-              DTS:ObjectName="SENSOR_PRESSURE"
-              DTS:DTSID="{00AA5971-D6F6-406B-9355-C4E36CB35B5E}"
+              DTS:ObjectName="WIND_SPEED"
+              DTS:DTSID="{06E1F3EA-6BCF-43DB-8365-66623219B577}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x000A_"
-              DTS:DataType="4"
+              DTS:DataType="2"
               DTS:TextQualified="True"
-              DTS:ObjectName="SENSOR_HUMIDITY"
-              DTS:DTSID="{828F224D-E3CF-49C4-80B9-D5CBD7BD1D0E}"
+              DTS:ObjectName="RAW_VALUE"
+              DTS:DTSID="{579843BA-89C1-4EF4-9578-E49B68682376}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -86,7 +85,7 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="3"
-      DTS:DTSID="{612C558B-9014-441D-9864-F45FB800C737}"
+      DTS:DTSID="{DD26AC26-3DB2-47E8-A0ED-1B5BCED9DA48}"
       DTS:ObjectName="Master_audit_key"
       DTS:Required="True">
       <DTS:Property
@@ -97,7 +96,7 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{A04D75AB-B2A0-4B71-A9D8-F1EF4E3A4ECC}"
+      DTS:DTSID="{8F622199-EECD-470B-85CF-FD26326A8C4A}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="Data_source_filename">
@@ -107,7 +106,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{16F57C2C-FF65-41F1-AF5A-7DA9B0ADECB4}"
+      DTS:DTSID="{F1FE3FF7-5002-4946-B6D6-BCD153F31A62}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="Number_of_files_errored">
@@ -116,7 +115,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{2396E5F1-82FD-46CC-84ED-0C0374F9F37E}"
+      DTS:DTSID="{5DC25550-E9F6-4F79-8834-39334414B49F}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="Number_of_files_processed">
@@ -125,7 +124,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{A332F91F-66D7-4127-AB65-AAEE4824EB58}"
+      DTS:DTSID="{786712D5-CFED-4817-91A5-F4B67AE1FF19}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="Number_of_files_successful">
@@ -134,7 +133,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{59239220-0BC0-4445-AF9F-3E9BD38160B9}"
+      DTS:DTSID="{57E0AD71-4771-4CC4-8D47-C19C9C6238F6}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="Package_audit_key">
@@ -147,14 +146,14 @@
       DTS:refId="Package\FCH - Process BME280 data"
       DTS:CreationName="STOCK:FOREACHLOOP"
       DTS:Description="BME280"
-      DTS:DTSID="{4766cfd9-8be9-40c6-b62b-37a73389271b}"
+      DTS:DTSID="{5BBBF176-0D53-4697-B9E6-0D8CA4EBE829}"
       DTS:ExecutableType="STOCK:FOREACHLOOP"
       DTS:LocaleID="-1"
       DTS:MaxErrorCount="999"
       DTS:ObjectName="FCH - Process BME280 data">
       <DTS:ForEachEnumerator
         DTS:CreationName="Microsoft.ForEachFileEnumerator"
-        DTS:DTSID="{f4f4a4c6-0645-4d0a-9715-6fe44f95eb5a}"
+        DTS:DTSID="{048661C1-AB86-4B50-B961-AC340B49F39E}"
         DTS:ObjectName="{6A22D1A2-99CD-45FE-87D2-89A5E5346F78}">
         <DTS:PropertyExpression
           DTS:Name="Directory">@[$Project::Data_source_directory]</DTS:PropertyExpression>
@@ -163,7 +162,7 @@
             <FEFEProperty
               Folder="D:\Users\mike.HOME\Documents\projects\data\incoming" />
             <FEFEProperty
-              FileSpec="BME280*.csv" />
+              FileSpec="anemometer*.csv" />
             <FEFEProperty
               FileNameRetrievalType="0" />
             <FEFEProperty
@@ -174,7 +173,7 @@
       <DTS:Variables>
         <DTS:Variable
           DTS:CreationName=""
-          DTS:DTSID="{dc9cc242-33bd-4b71-a2e8-dfde88755315}"
+          DTS:DTSID="{17183EB3-578E-4EEC-9F6C-965C74FBE12B}"
           DTS:IncludeInDebugDump="6789"
           DTS:Namespace="User"
           DTS:ObjectName="Rows_extracted">
@@ -183,7 +182,7 @@
         </DTS:Variable>
         <DTS:Variable
           DTS:CreationName=""
-          DTS:DTSID="{72721584-bd92-4f99-accb-cec08bfdc8a5}"
+          DTS:DTSID="{BF229189-9EF4-4130-BD65-A93C312D828C}"
           DTS:IncludeInDebugDump="6789"
           DTS:Namespace="User"
           DTS:ObjectName="Task_audit_key">
@@ -193,13 +192,13 @@
       </DTS:Variables>
       <DTS:Executables>
         <DTS:Executable
-          DTS:refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file"
+          DTS:refId="Package\FCH - Process BME280 data\DFT - Process anemometer data file"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{3afdebe7-056c-415f-9bb0-be913b25a9cf}"
+          DTS:DTSID="{5C9D2CC8-0855-4C4B-B0B5-0A4F3099DF90}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
-          DTS:ObjectName="DFT - Process BME280 data file"
+          DTS:ObjectName="DFT - Process anemometer data file"
           DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
@@ -207,7 +206,7 @@
               version="1">
               <components>
                 <component
-                  refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\CNT - Rows extracted"
+                  refId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\CNT - Rows extracted"
                   componentClassID="Microsoft.RowCount"
                   contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
@@ -220,7 +219,7 @@
                   </properties>
                   <inputs>
                     <input
-                      refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\CNT - Rows extracted.Inputs[Row Count Input 1]"
+                      refId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\CNT - Rows extracted.Inputs[Row Count Input 1]"
                       hasSideEffects="true"
                       name="Row Count Input 1">
                       <externalMetadataColumns />
@@ -228,15 +227,15 @@
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\CNT - Rows extracted.Outputs[Row Count Output 1]"
+                      refId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\CNT - Rows extracted.Outputs[Row Count Output 1]"
                       name="Row Count Output 1"
-                      synchronousInputId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\CNT - Rows extracted.Inputs[Row Count Input 1]">
+                      synchronousInputId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\CNT - Rows extracted.Inputs[Row Count Input 1]">
                       <externalMetadataColumns />
                     </output>
                   </outputs>
                 </component>
                 <component
-                  refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\DER - Add audit column"
+                  refId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\DER - Add audit column"
                   componentClassID="Microsoft.DerivedColumn"
                   contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
@@ -244,7 +243,7 @@
                   usesDispositions="true">
                   <inputs>
                     <input
-                      refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\DER - Add audit column.Inputs[Derived Column Input]"
+                      refId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\DER - Add audit column.Inputs[Derived Column Input]"
                       description="Input to the Derived Column Transformation"
                       name="Derived Column Input">
                       <externalMetadataColumns />
@@ -252,18 +251,18 @@
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\DER - Add audit column.Outputs[Derived Column Output]"
+                      refId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\DER - Add audit column.Outputs[Derived Column Output]"
                       description="Default Output of the Derived Column Transformation"
                       exclusionGroup="1"
                       name="Derived Column Output"
-                      synchronousInputId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\DER - Add audit column.Inputs[Derived Column Input]">
+                      synchronousInputId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\DER - Add audit column.Inputs[Derived Column Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\DER - Add audit column.Outputs[Derived Column Output].Columns[Insert_audit_key]"
+                          refId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\DER - Add audit column.Outputs[Derived Column Output].Columns[Insert_audit_key]"
                           dataType="i4"
                           errorOrTruncationOperation="Computation"
                           errorRowDisposition="FailComponent"
-                          lineageId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\DER - Add audit column.Outputs[Derived Column Output].Columns[Insert_audit_key]"
+                          lineageId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\DER - Add audit column.Outputs[Derived Column Output].Columns[Insert_audit_key]"
                           name="Insert_audit_key"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -284,23 +283,23 @@
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\DER - Add audit column.Outputs[Derived Column Error Output]"
+                      refId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\DER - Add audit column.Outputs[Derived Column Error Output]"
                       description="Error Output of the Derived Column Transformation"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="Derived Column Error Output"
-                      synchronousInputId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\DER - Add audit column.Inputs[Derived Column Input]">
+                      synchronousInputId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\DER - Add audit column.Inputs[Derived Column Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\DER - Add audit column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          refId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\DER - Add audit column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\DER - Add audit column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          lineageId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\DER - Add audit column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\DER - Add audit column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          refId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\DER - Add audit column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\DER - Add audit column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\DER - Add audit column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -309,12 +308,12 @@
                   </outputs>
                 </component>
                 <component
-                  refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file"
+                  refId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\FLT SRC - anemometer source file"
                   componentClassID="Microsoft.FlatFileSource"
                   contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
                   description="Flat File Source"
                   localeId="3081"
-                  name="FLT SRC - BME280 source file"
+                  name="FLT SRC - anemometer source file"
                   usesDispositions="true"
                   version="1">
                   <properties>
@@ -329,25 +328,25 @@
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Connections[FlatFileConnection]"
-                      connectionManagerID="Package.ConnectionManagers[BME280 data file connection]"
-                      connectionManagerRefId="Package.ConnectionManagers[BME280 data file connection]"
+                      refId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[anemometer data file connection]"
+                      connectionManagerRefId="Package.ConnectionManagers[anemometer data file connection]"
                       name="FlatFileConnection" />
                   </connections>
                   <outputs>
                     <output
-                      refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output]"
+                      refId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output]"
                       name="Flat File Source Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output].Columns[SYSTEM_TIMESTAMP]"
+                          refId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].Columns[SYSTEM_TIMESTAMP]"
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output].ExternalColumns[SYSTEM_TIMESTAMP]"
+                          externalMetadataColumnId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].ExternalColumns[SYSTEM_TIMESTAMP]"
                           length="28"
-                          lineageId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output].Columns[SYSTEM_TIMESTAMP]"
+                          lineageId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].Columns[SYSTEM_TIMESTAMP]"
                           name="SYSTEM_TIMESTAMP"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -362,13 +361,13 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output].Columns[SENSOR_TIMESTAMP]"
-                          dataType="r4"
+                          refId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].Columns[SYSTEM_EPOCH_TIME]"
+                          dataType="i4"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output].ExternalColumns[SENSOR_TIMESTAMP]"
-                          lineageId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output].Columns[SENSOR_TIMESTAMP]"
-                          name="SENSOR_TIMESTAMP"
+                          externalMetadataColumnId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].ExternalColumns[SYSTEM_EPOCH_TIME]"
+                          lineageId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].Columns[SYSTEM_EPOCH_TIME]"
+                          name="SYSTEM_EPOCH_TIME"
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
@@ -382,13 +381,13 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output].Columns[SENSOR_TEMP]"
-                          dataType="r4"
+                          refId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].Columns[SYSTEM_MILLISECONDS]"
+                          dataType="i4"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output].ExternalColumns[SENSOR_TEMP]"
-                          lineageId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output].Columns[SENSOR_TEMP]"
-                          name="SENSOR_TEMP"
+                          externalMetadataColumnId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].ExternalColumns[SYSTEM_MILLISECONDS]"
+                          lineageId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].Columns[SYSTEM_MILLISECONDS]"
+                          name="SYSTEM_MILLISECONDS"
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
@@ -402,13 +401,13 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output].Columns[SENSOR_PRESSURE]"
+                          refId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].Columns[WIND_SPEED]"
                           dataType="r4"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output].ExternalColumns[SENSOR_PRESSURE]"
-                          lineageId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output].Columns[SENSOR_PRESSURE]"
-                          name="SENSOR_PRESSURE"
+                          externalMetadataColumnId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].ExternalColumns[WIND_SPEED]"
+                          lineageId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].Columns[WIND_SPEED]"
+                          name="WIND_SPEED"
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
@@ -422,13 +421,13 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output].Columns[SENSOR_HUMIDITY]"
-                          dataType="r4"
+                          refId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].Columns[RAW_VALUE]"
+                          dataType="i2"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output].ExternalColumns[SENSOR_HUMIDITY]"
-                          lineageId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output].Columns[SENSOR_HUMIDITY]"
-                          name="SENSOR_HUMIDITY"
+                          externalMetadataColumnId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].ExternalColumns[RAW_VALUE]"
+                          lineageId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].Columns[RAW_VALUE]"
+                          name="RAW_VALUE"
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
@@ -445,51 +444,49 @@
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output].ExternalColumns[SYSTEM_TIMESTAMP]"
-                          codePage="1252"
-                          dataType="str"
-                          length="28"
+                          refId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].ExternalColumns[SYSTEM_TIMESTAMP]"
+                          dataType="date"
                           name="SYSTEM_TIMESTAMP" />
                         <externalMetadataColumn
-                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output].ExternalColumns[SENSOR_TIMESTAMP]"
-                          dataType="r4"
-                          name="SENSOR_TIMESTAMP" />
+                          refId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].ExternalColumns[SYSTEM_EPOCH_TIME]"
+                          dataType="i4"
+                          name="SYSTEM_EPOCH_TIME" />
                         <externalMetadataColumn
-                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output].ExternalColumns[SENSOR_TEMP]"
-                          dataType="r4"
-                          name="SENSOR_TEMP" />
+                          refId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].ExternalColumns[SYSTEM_MILLISECONDS]"
+                          dataType="i4"
+                          name="SYSTEM_MILLISECONDS" />
                         <externalMetadataColumn
-                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output].ExternalColumns[SENSOR_PRESSURE]"
+                          refId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].ExternalColumns[WIND_SPEED]"
                           dataType="r4"
-                          name="SENSOR_PRESSURE" />
+                          name="WIND_SPEED" />
                         <externalMetadataColumn
-                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output].ExternalColumns[SENSOR_HUMIDITY]"
-                          dataType="r4"
-                          name="SENSOR_HUMIDITY" />
+                          refId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].ExternalColumns[RAW_VALUE]"
+                          dataType="i2"
+                          name="RAW_VALUE" />
                       </externalMetadataColumns>
                     </output>
                     <output
-                      refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Error Output]"
+                      refId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Error Output]"
                       isErrorOut="true"
                       name="Flat File Source Error Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          refId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                           codePage="1252"
                           dataType="text"
                           description="Flat File Source Error Output Column"
-                          lineageId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          lineageId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                           name="Flat File Source Error Output Column" />
                         <outputColumn
-                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          refId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          lineageId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          refId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -498,11 +495,11 @@
                   </outputs>
                 </component>
                 <component
-                  refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280"
+                  refId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer"
                   componentClassID="Microsoft.OLEDBDestination"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
-                  name="OLE DST - Sensor DB table BME280"
+                  name="OLE DST - Sensor DB table anemometer"
                   usesDispositions="true"
                   version="4">
                   <properties>
@@ -513,7 +510,7 @@
                     <property
                       dataType="System.String"
                       description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">[staging].[BME280]</property>
+                      name="OpenRowset">[staging].[Anemometer]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -555,7 +552,7 @@
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Connections[OleDbConnection]"
+                      refId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Connections[OleDbConnection]"
                       connectionManagerID="{BAFB3E71-BAF6-462F-A87F-5E1F8D40E45C}:external"
                       connectionManagerRefId="Project.ConnectionManagers[stormyPi_Sensors]"
                       description="The OLE DB runtime connection used to access the database."
@@ -563,105 +560,100 @@
                   </connections>
                   <inputs>
                     <input
-                      refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Inputs[OLE DB Destination Input]"
+                      refId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Inputs[OLE DB Destination Input]"
                       errorOrTruncationOperation="Insert"
                       errorRowDisposition="FailComponent"
                       hasSideEffects="true"
                       name="OLE DB Destination Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Inputs[OLE DB Destination Input].Columns[SENSOR_TIMESTAMP]"
-                          cachedDataType="r4"
-                          cachedName="SENSOR_TIMESTAMP"
-                          externalMetadataColumnId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Inputs[OLE DB Destination Input].ExternalColumns[Sensor_timestamp]"
-                          lineageId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output].Columns[SENSOR_TIMESTAMP]" />
-                        <inputColumn
-                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Inputs[OLE DB Destination Input].Columns[SENSOR_TEMP]"
-                          cachedDataType="r4"
-                          cachedName="SENSOR_TEMP"
-                          externalMetadataColumnId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Inputs[OLE DB Destination Input].ExternalColumns[Temperature_celcius]"
-                          lineageId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output].Columns[SENSOR_TEMP]" />
-                        <inputColumn
-                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Inputs[OLE DB Destination Input].Columns[SYSTEM_TIMESTAMP]"
+                          refId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Inputs[OLE DB Destination Input].Columns[SYSTEM_TIMESTAMP]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="28"
                           cachedName="SYSTEM_TIMESTAMP"
-                          externalMetadataColumnId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Inputs[OLE DB Destination Input].ExternalColumns[System_timestamp]"
-                          lineageId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output].Columns[SYSTEM_TIMESTAMP]" />
+                          externalMetadataColumnId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Inputs[OLE DB Destination Input].ExternalColumns[System_timestamp]"
+                          lineageId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].Columns[SYSTEM_TIMESTAMP]" />
                         <inputColumn
-                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Inputs[OLE DB Destination Input].Columns[SENSOR_PRESSURE]"
-                          cachedDataType="r4"
-                          cachedName="SENSOR_PRESSURE"
-                          externalMetadataColumnId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Inputs[OLE DB Destination Input].ExternalColumns[Barometric_pressure]"
-                          lineageId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output].Columns[SENSOR_PRESSURE]" />
-                        <inputColumn
-                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Inputs[OLE DB Destination Input].Columns[SENSOR_HUMIDITY]"
-                          cachedDataType="r4"
-                          cachedName="SENSOR_HUMIDITY"
-                          externalMetadataColumnId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Inputs[OLE DB Destination Input].ExternalColumns[Humidity]"
-                          lineageId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output].Columns[SENSOR_HUMIDITY]" />
-                        <inputColumn
-                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Inputs[OLE DB Destination Input].Columns[Insert_audit_key]"
+                          refId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Inputs[OLE DB Destination Input].Columns[Insert_audit_key]"
                           cachedDataType="i4"
                           cachedName="Insert_audit_key"
-                          externalMetadataColumnId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Inputs[OLE DB Destination Input].ExternalColumns[Insert_audit_key]"
-                          lineageId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\DER - Add audit column.Outputs[Derived Column Output].Columns[Insert_audit_key]" />
+                          externalMetadataColumnId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Inputs[OLE DB Destination Input].ExternalColumns[Insert_audit_key]"
+                          lineageId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\DER - Add audit column.Outputs[Derived Column Output].Columns[Insert_audit_key]" />
+                        <inputColumn
+                          refId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Inputs[OLE DB Destination Input].Columns[SYSTEM_EPOCH_TIME]"
+                          cachedDataType="i4"
+                          cachedName="SYSTEM_EPOCH_TIME"
+                          externalMetadataColumnId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Inputs[OLE DB Destination Input].ExternalColumns[System_epoch_time]"
+                          lineageId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].Columns[SYSTEM_EPOCH_TIME]" />
+                        <inputColumn
+                          refId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Inputs[OLE DB Destination Input].Columns[SYSTEM_MILLISECONDS]"
+                          cachedDataType="i4"
+                          cachedName="SYSTEM_MILLISECONDS"
+                          externalMetadataColumnId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Inputs[OLE DB Destination Input].ExternalColumns[System_milliseconds]"
+                          lineageId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].Columns[SYSTEM_MILLISECONDS]" />
+                        <inputColumn
+                          refId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Inputs[OLE DB Destination Input].Columns[WIND_SPEED]"
+                          cachedDataType="r4"
+                          cachedName="WIND_SPEED"
+                          externalMetadataColumnId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Inputs[OLE DB Destination Input].ExternalColumns[Wind_speed]"
+                          lineageId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].Columns[WIND_SPEED]" />
+                        <inputColumn
+                          refId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Inputs[OLE DB Destination Input].Columns[RAW_VALUE]"
+                          cachedDataType="i2"
+                          cachedName="RAW_VALUE"
+                          externalMetadataColumnId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Inputs[OLE DB Destination Input].ExternalColumns[Raw_ADC_value]"
+                          lineageId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].Columns[RAW_VALUE]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Inputs[OLE DB Destination Input].ExternalColumns[System_timestamp]"
-                          dataType="dbTimeStamp2"
-                          name="System_timestamp"
-                          scale="7" />
+                          refId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Inputs[OLE DB Destination Input].ExternalColumns[System_timestamp]"
+                          dataType="dbTimeStamp"
+                          name="System_timestamp" />
                         <externalMetadataColumn
-                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Inputs[OLE DB Destination Input].ExternalColumns[Sensor_timestamp]"
-                          dataType="i4"
-                          name="Sensor_timestamp" />
-                        <externalMetadataColumn
-                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Inputs[OLE DB Destination Input].ExternalColumns[Temperature_celcius]"
-                          dataType="numeric"
-                          name="Temperature_celcius"
-                          precision="6"
-                          scale="3" />
-                        <externalMetadataColumn
-                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Inputs[OLE DB Destination Input].ExternalColumns[Barometric_pressure]"
-                          dataType="numeric"
-                          name="Barometric_pressure"
-                          precision="10"
-                          scale="2" />
-                        <externalMetadataColumn
-                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Inputs[OLE DB Destination Input].ExternalColumns[Humidity]"
-                          dataType="numeric"
-                          name="Humidity"
-                          precision="5"
-                          scale="2" />
-                        <externalMetadataColumn
-                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Inputs[OLE DB Destination Input].ExternalColumns[Insert_audit_key]"
+                          refId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Inputs[OLE DB Destination Input].ExternalColumns[Insert_audit_key]"
                           dataType="i4"
                           name="Insert_audit_key" />
+                        <externalMetadataColumn
+                          refId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Inputs[OLE DB Destination Input].ExternalColumns[System_epoch_time]"
+                          dataType="i4"
+                          name="System_epoch_time" />
+                        <externalMetadataColumn
+                          refId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Inputs[OLE DB Destination Input].ExternalColumns[System_milliseconds]"
+                          dataType="i4"
+                          name="System_milliseconds" />
+                        <externalMetadataColumn
+                          refId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Inputs[OLE DB Destination Input].ExternalColumns[Wind_speed]"
+                          dataType="numeric"
+                          name="Wind_speed"
+                          precision="9"
+                          scale="7" />
+                        <externalMetadataColumn
+                          refId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Inputs[OLE DB Destination Input].ExternalColumns[Raw_ADC_value]"
+                          dataType="i4"
+                          name="Raw_ADC_value" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Outputs[OLE DB Destination Error Output]"
+                      refId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Outputs[OLE DB Destination Error Output]"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="OLE DB Destination Error Output"
-                      synchronousInputId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Inputs[OLE DB Destination Input]">
+                      synchronousInputId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Inputs[OLE DB Destination Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          refId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          lineageId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          refId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -672,20 +664,20 @@
               </components>
               <paths>
                 <path
-                  refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file.Paths[Derived Column Output]"
-                  endId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Inputs[OLE DB Destination Input]"
+                  refId="Package\FCH - Process BME280 data\DFT - Process anemometer data file.Paths[Derived Column Output]"
+                  endId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Inputs[OLE DB Destination Input]"
                   name="Derived Column Output"
-                  startId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\DER - Add audit column.Outputs[Derived Column Output]" />
+                  startId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\DER - Add audit column.Outputs[Derived Column Output]" />
                 <path
-                  refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file.Paths[Flat File Source Output]"
-                  endId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\CNT - Rows extracted.Inputs[Row Count Input 1]"
+                  refId="Package\FCH - Process BME280 data\DFT - Process anemometer data file.Paths[Flat File Source Output]"
+                  endId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\CNT - Rows extracted.Inputs[Row Count Input 1]"
                   name="Flat File Source Output"
-                  startId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output]" />
+                  startId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output]" />
                 <path
-                  refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file.Paths[Row Count Output 1]"
-                  endId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\DER - Add audit column.Inputs[Derived Column Input]"
+                  refId="Package\FCH - Process BME280 data\DFT - Process anemometer data file.Paths[Row Count Output 1]"
+                  endId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\DER - Add audit column.Inputs[Derived Column Input]"
                   name="Row Count Output 1"
-                  startId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\CNT - Rows extracted.Outputs[Row Count Output 1]" />
+                  startId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\CNT - Rows extracted.Outputs[Row Count Output 1]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -694,7 +686,7 @@
           DTS:refId="Package\FCH - Process BME280 data\EXP - Increment file count"
           DTS:CreationName="Microsoft.ExpressionTask"
           DTS:Description="Expression Task"
-          DTS:DTSID="{61FE846C-E170-42CD-BACE-75755788A240}"
+          DTS:DTSID="{3EE04CF3-E6B3-4D62-99A1-423D44C98697}"
           DTS:ExecutableType="Microsoft.ExpressionTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="EXP - Increment file count"
@@ -710,7 +702,7 @@
           DTS:refId="Package\FCH - Process BME280 data\SQC - Perform error actions"
           DTS:CreationName="STOCK:SEQUENCE"
           DTS:Description="Sequence Container"
-          DTS:DTSID="{C184F751-34B9-409F-974A-258EB624C9D3}"
+          DTS:DTSID="{7ED7E596-8BCA-48F2-AC9A-4C7C0FDFE0E8}"
           DTS:ExecutableType="STOCK:SEQUENCE"
           DTS:LocaleID="-1"
           DTS:ObjectName="SQC - Perform error actions">
@@ -720,12 +712,12 @@
               DTS:refId="Package\FCH - Process BME280 data\SQC - Perform error actions\EXP - Increment error file count"
               DTS:CreationName="Microsoft.ExpressionTask"
               DTS:Description="Expression Task"
-              DTS:DTSID="{b19f809b-2dc6-4c97-b712-20317b46b190}"
+              DTS:DTSID="{A20379B1-3F9E-4AE1-AC83-C16F32792D21}"
               DTS:ExecutableType="Microsoft.ExpressionTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="EXP - Increment error file count"
               DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="3">
+              DTS:ThreadHint="1">
               <DTS:Variables />
               <DTS:ObjectData>
                 <ExpressionTask
@@ -737,18 +729,18 @@
               DTS:CreationName="Microsoft.FileSystemTask"
               DTS:DelayValidation="True"
               DTS:Description="File System Task"
-              DTS:DTSID="{fc9279a7-6a4d-4d92-8349-7fd3ae0442ab}"
+              DTS:DTSID="{EE862E93-35E8-4A82-8AAC-2A47A6A2354F}"
               DTS:ExecutableType="Microsoft.FileSystemTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="FST - Move file to error dir"
               DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="4">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:EventHandlers>
                 <DTS:EventHandler
                   DTS:refId="Package\FCH - Process BME280 data\SQC - Perform error actions\FST - Move file to error dir.EventHandlers[OnPreExecute]"
                   DTS:CreationName="OnPreExecute"
-                  DTS:DTSID="{5a7ac7d9-04d3-4124-8721-ca38783126e5}"
+                  DTS:DTSID="{31A22A4F-182A-45C7-92A2-431B95ADE3D2}"
                   DTS:EventID="0"
                   DTS:EventName="OnPreExecute"
                   DTS:LocaleID="-1">
@@ -756,7 +748,7 @@
                     <DTS:Variable
                       DTS:CreationName=""
                       DTS:Description="The propagate property of the event"
-                      DTS:DTSID="{a2969f65-8f11-4b2b-a53b-2a5fb1fc9c59}"
+                      DTS:DTSID="{57E83BF3-F82D-46A0-95B3-ABA36664E3BF}"
                       DTS:IncludeInDebugDump="6789"
                       DTS:Namespace="System"
                       DTS:ObjectName="Propagate">
@@ -769,7 +761,7 @@
                       DTS:refId="Package\FCH - Process BME280 data\SQC - Perform error actions\FST - Move file to error dir.EventHandlers[OnPreExecute]\SQL - Set success field to false"
                       DTS:CreationName="Microsoft.ExecuteSQLTask"
                       DTS:Description="Execute SQL Task"
-                      DTS:DTSID="{d00c48ab-bc29-4c53-93db-7d2152fd7599}"
+                      DTS:DTSID="{9FABD3B4-0106-4564-8FAB-7084F9737360}"
                       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
                       DTS:LocaleID="-1"
                       DTS:ObjectName="SQL - Set success field to false"
@@ -807,7 +799,7 @@
           DTS:refId="Package\FCH - Process BME280 data\SQC - Perform success actions"
           DTS:CreationName="STOCK:SEQUENCE"
           DTS:Description="Sequence Container"
-          DTS:DTSID="{73E13A7D-A26B-4163-8BCE-CF9B0BB809ED}"
+          DTS:DTSID="{AC81BC37-F77C-4EA4-914A-6509C09F0F02}"
           DTS:ExecutableType="STOCK:SEQUENCE"
           DTS:LocaleID="-1"
           DTS:ObjectName="SQC - Perform success actions">
@@ -817,7 +809,7 @@
               DTS:refId="Package\FCH - Process BME280 data\SQC - Perform success actions\EXP - Increment success file count"
               DTS:CreationName="Microsoft.ExpressionTask"
               DTS:Description="Expression Task"
-              DTS:DTSID="{7b6061be-f5c3-4ca4-94a1-3616452c1e86}"
+              DTS:DTSID="{FD58B909-C55F-45B4-941A-ADFD9741B715}"
               DTS:ExecutableType="Microsoft.ExpressionTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="EXP - Increment success file count"
@@ -834,18 +826,18 @@
               DTS:CreationName="Microsoft.FileSystemTask"
               DTS:DelayValidation="True"
               DTS:Description="File System Task"
-              DTS:DTSID="{4801ffa7-c565-4544-b45e-e4890a39db16}"
+              DTS:DTSID="{1EED1B28-F366-4ED5-AA8B-9B96BE69261C}"
               DTS:ExecutableType="Microsoft.FileSystemTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="FST - Move file to processed dir"
               DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="3">
               <DTS:Variables />
               <DTS:EventHandlers>
                 <DTS:EventHandler
                   DTS:refId="Package\FCH - Process BME280 data\SQC - Perform success actions\FST - Move file to processed dir.EventHandlers[OnPostExecute]"
                   DTS:CreationName="OnPostExecute"
-                  DTS:DTSID="{efd2e602-1a4b-418c-83d4-836738126512}"
+                  DTS:DTSID="{8B09F5C9-FF36-4E5F-8017-1EF31E630242}"
                   DTS:EventID="0"
                   DTS:EventName="OnPostExecute"
                   DTS:LocaleID="-1">
@@ -853,7 +845,7 @@
                     <DTS:Variable
                       DTS:CreationName=""
                       DTS:Description="The propagate property of the event"
-                      DTS:DTSID="{49b6adeb-5941-441f-8c23-b5b07c0e24cf}"
+                      DTS:DTSID="{82DCB4A3-15FC-4066-A1B6-4B2988A2F213}"
                       DTS:IncludeInDebugDump="6789"
                       DTS:Namespace="System"
                       DTS:ObjectName="Propagate">
@@ -866,7 +858,7 @@
                       DTS:refId="Package\FCH - Process BME280 data\SQC - Perform success actions\FST - Move file to processed dir.EventHandlers[OnPostExecute]\SQL - Set success field to true"
                       DTS:CreationName="Microsoft.ExecuteSQLTask"
                       DTS:Description="Execute SQL Task"
-                      DTS:DTSID="{03417770-a3f3-4df7-be94-f18a6d957ddb}"
+                      DTS:DTSID="{6122E0CD-2647-40A6-BE9E-395361B9B8B6}"
                       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
                       DTS:LocaleID="-1"
                       DTS:ObjectName="SQL - Set success field to true"
@@ -902,17 +894,17 @@
               DTS:refId="Package\FCH - Process BME280 data\SQC - Perform success actions\SQL - Move data from staging table"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{92348191-5DE0-4EC4-BE6A-A48910A3DB20}"
+              DTS:DTSID="{D6AC0A64-95E0-4173-9DCF-90CAEE419C02}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="SQL - Move data from staging table"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="1">
+              DTS:ThreadHint="4">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
                   SQLTask:Connection="{BAFB3E71-BAF6-462F-A87F-5E1F8D40E45C}"
-                  SQLTask:SqlStatementSource="INSERT INTO [dbo].[BME280] (&#xA;&#x9;[System_timestamp],&#xA;&#x9;[Sensor_timestamp],&#xA;&#x9;[Temperature_celcius],&#xA;&#x9;[Barometric_pressure],&#xA;&#x9;[Humidity]&#xA;)&#xA;SELECT [System_timestamp],&#xA;&#x9;[Sensor_timestamp],&#xA;&#x9;[Temperature_celcius],&#xA;&#x9;[Barometric_pressure],&#xA;&#x9;[Humidity]&#xA;FROM [staging].[BME280];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+                  SQLTask:SqlStatementSource="INSERT INTO [dbo].[anemometer] (&#xA;&#x9;[System_timestamp],&#xA;&#x9;[System_epoch_time],&#xA;&#x9;[System_milliseconds],&#xA;&#x9;[Wind_speed],&#xA;&#x9;[Raw_ADC_value],&#xA;&#x9;[Insert_audit_key]&#xA;)&#xA;SELECT [System_timestamp],&#xA;&#x9;[System_epoch_time],&#xA;&#x9;[System_milliseconds],&#xA;&#x9;[Wind_speed],&#xA;&#x9;[Raw_ADC_value],&#xA;&#x9;[Insert_audit_key]&#xA;FROM [staging].[anemometer];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
           </DTS:Executables>
@@ -921,7 +913,7 @@
           DTS:refId="Package\FCH - Process BME280 data\SQL - Create task audit row"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{31ddc3b1-73c6-49ef-aeba-e6e5ac058b06}"
+          DTS:DTSID="{C0DA7064-63E0-4641-B85F-EC8D9E5A0577}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="SQL - Create task audit row"
@@ -931,7 +923,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{BAFB3E71-BAF6-462F-A87F-5E1F8D40E45C}"
-              SQLTask:SqlStatementSource="INSERT INTO [log].[etl_executions] (&#xA; [Parent_audit_key],&#xA; [Task_name],&#xA; [File_name],&#xA; [Row_count_start],&#xA; [Execution_GUID]&#xA;)&#xA;VALUES (&#xA; ?,&#xA; ? + ' data file',&#xA; ?,&#xA; ( SELECT COUNT(*) FROM [dbo].[BME280] ),&#xA; ?&#xA;);&#xA;&#xA;SELECT SCOPE_IDENTITY() AS Task_audit_key;"
+              SQLTask:SqlStatementSource="INSERT INTO [log].[etl_executions] (&#xA; [Parent_audit_key],&#xA; [Task_name],&#xA; [File_name],&#xA; [Row_count_start],&#xA; [Execution_GUID]&#xA;)&#xA;VALUES (&#xA; ?,&#xA; ? + ' data file',&#xA; ?,&#xA; ( SELECT COUNT(*) FROM [dbo].[anemometer] ),&#xA; ?&#xA;);&#xA;&#xA;SELECT SCOPE_IDENTITY() AS Task_audit_key;"
               SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ResultBinding
                 SQLTask:ResultName="0"
@@ -967,7 +959,7 @@
           DTS:refId="Package\FCH - Process BME280 data\SQL - Finalise task audit row"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{f4bd3e5b-6a6e-420c-a69f-58f8660e1821}"
+          DTS:DTSID="{15AAA3AE-B0B3-44CB-A274-4CB45B19FE9C}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="SQL - Finalise task audit row"
@@ -977,7 +969,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{BAFB3E71-BAF6-462F-A87F-5E1F8D40E45C}"
-              SQLTask:SqlStatementSource="UPDATE [log].[etl_executions]&#xA;SET Processing_end=SYSDATETIME(),&#xA;&#x9;Row_count_end=(&#xA;&#x9;&#x9;SELECT COUNT(*)&#xA;&#x9;&#x9;FROM [dbo].[BME280]&#xA;&#x9;),&#xA;&#x9;Items_processed=?&#xA;WHERE [Audit_key]=?;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource="UPDATE [log].[etl_executions]&#xA;SET Processing_end=SYSDATETIME(),&#xA;&#x9;Row_count_end=(&#xA;&#x9;&#x9;SELECT COUNT(*)&#xA;&#x9;&#x9;FROM [dbo].[anemometer]&#xA;&#x9;),&#xA;&#x9;Items_processed=?&#xA;WHERE [Audit_key]=?;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="0"
                 SQLTask:DtsVariableName="User::Rows_extracted"
@@ -997,7 +989,7 @@
           DTS:refId="Package\FCH - Process BME280 data\SQL - Truncate staging table"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{C8495E75-A3CB-4913-8D91-B8D586DC45C3}"
+          DTS:DTSID="{97E8124E-0DE3-42B8-80FD-28F5169F0272}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="SQL - Truncate staging table"
@@ -1015,16 +1007,16 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\FCH - Process BME280 data.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{F951D8B8-DA4B-4D07-9452-77DDFCDB3755}"
-          DTS:From="Package\FCH - Process BME280 data\DFT - Process BME280 data file"
+          DTS:DTSID="{151AABDF-8ACA-4513-AECD-E951C0A68CD8}"
+          DTS:From="Package\FCH - Process BME280 data\DFT - Process anemometer data file"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
           DTS:To="Package\FCH - Process BME280 data\SQC - Perform success actions" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\FCH - Process BME280 data.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
-          DTS:DTSID="{F62A25FC-79AE-42CE-8E81-60CF62181155}"
-          DTS:From="Package\FCH - Process BME280 data\DFT - Process BME280 data file"
+          DTS:DTSID="{52567EFA-EE95-4E2A-8396-1B857C6196F8}"
+          DTS:From="Package\FCH - Process BME280 data\DFT - Process anemometer data file"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
           DTS:To="Package\FCH - Process BME280 data\SQC - Perform error actions"
@@ -1032,7 +1024,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\FCH - Process BME280 data.PrecedenceConstraints[Constraint 2]"
           DTS:CreationName=""
-          DTS:DTSID="{F8339415-04D6-4C4C-886E-26A687F75F5C}"
+          DTS:DTSID="{FDB6860E-384C-4DB3-B964-E03EAECC7913}"
           DTS:From="Package\FCH - Process BME280 data\SQC - Perform success actions"
           DTS:ObjectName="Constraint 2"
           DTS:To="Package\FCH - Process BME280 data\SQL - Finalise task audit row"
@@ -1040,7 +1032,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\FCH - Process BME280 data.PrecedenceConstraints[Constraint 3]"
           DTS:CreationName=""
-          DTS:DTSID="{01D58C23-906F-451A-964E-142EEF27F1DF}"
+          DTS:DTSID="{BCA01892-F97E-45A6-97A0-5994E9E286CD}"
           DTS:From="Package\FCH - Process BME280 data\SQC - Perform error actions"
           DTS:ObjectName="Constraint 3"
           DTS:To="Package\FCH - Process BME280 data\SQL - Finalise task audit row"
@@ -1048,7 +1040,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\FCH - Process BME280 data.PrecedenceConstraints[Constraint 4]"
           DTS:CreationName=""
-          DTS:DTSID="{47AB3E64-A81A-4CB4-BD83-2F86A29A9FB1}"
+          DTS:DTSID="{9D435E08-52BF-4B75-8147-B0DE85B279C2}"
           DTS:From="Package\FCH - Process BME280 data\SQL - Create task audit row"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 4"
@@ -1056,17 +1048,17 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\FCH - Process BME280 data.PrecedenceConstraints[Constraint 5]"
           DTS:CreationName=""
-          DTS:DTSID="{F1B72EAE-8491-4817-9DDA-B04233E0CB59}"
+          DTS:DTSID="{999F91A9-638E-48CD-97E3-B54DA9A4FB88}"
           DTS:From="Package\FCH - Process BME280 data\SQL - Truncate staging table"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 5"
-          DTS:To="Package\FCH - Process BME280 data\DFT - Process BME280 data file" />
+          DTS:To="Package\FCH - Process BME280 data\DFT - Process anemometer data file" />
       </DTS:PrecedenceConstraints>
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{B1807F36-4CF9-4ABE-AF3B-04624C5B4003}"
-          DTS:ObjectName="{B1807F36-4CF9-4ABE-AF3B-04624C5B4003}"
+          DTS:DTSID="{F67B2FFB-2328-4DA9-BFF8-AC11709CF8F5}"
+          DTS:ObjectName="{F67B2FFB-2328-4DA9-BFF8-AC11709CF8F5}"
           DTS:ValueIndex="0"
           DTS:VariableName="User::Data_source_filename" />
       </DTS:ForEachVariableMappings>
@@ -1075,7 +1067,7 @@
       DTS:refId="Package\SQL - Create package audit row"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{B3CCBFA2-82F4-45B0-8552-6511AE44C1A7}"
+      DTS:DTSID="{F7CCCF60-2E46-4CDD-8D24-FD868A960053}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="SQL - Create package audit row"
@@ -1085,7 +1077,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{BAFB3E71-BAF6-462F-A87F-5E1F8D40E45C}"
-          SQLTask:SqlStatementSource="INSERT INTO [log].[etl_executions] (&#xA;&#x9;[Parent_audit_key],&#xA;&#x9;[Task_name],&#xA;&#x9;[Row_count_start],&#xA;&#x9;[Execution_GUID]&#xA;)&#xA;VALUES (&#xA;&#x9;?,&#xA;&#x9;?,&#xA;&#x9;(SELECT COUNT(*) FROM [dbo].[BME280]),&#xA;&#x9;?&#xA;);&#xA;&#xA;SELECT SCOPE_IDENTITY() AS Package_audit_key;"
+          SQLTask:SqlStatementSource="INSERT INTO [log].[etl_executions] (&#xA;&#x9;[Parent_audit_key],&#xA;&#x9;[Task_name],&#xA;&#x9;[Row_count_start],&#xA;&#x9;[Execution_GUID]&#xA;)&#xA;VALUES (&#xA;&#x9;?,&#xA;&#x9;?,&#xA;&#x9;(SELECT COUNT(*) FROM [dbo].[anemometer]),&#xA;&#x9;?&#xA;);&#xA;&#xA;SELECT SCOPE_IDENTITY() AS Package_audit_key;"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
             SQLTask:ResultName="0"
@@ -1115,7 +1107,7 @@
       DTS:refId="Package\SQL - Finalise package audit row"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{7E7229CB-D761-4C85-9CDA-2D224B6CF154}"
+      DTS:DTSID="{A229F7A3-2F9F-4AB6-B52E-F35F99BC4AA4}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="SQL - Finalise package audit row"
@@ -1125,7 +1117,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{BAFB3E71-BAF6-462F-A87F-5E1F8D40E45C}"
-          SQLTask:SqlStatementSource="UPDATE [log].[etl_executions]&#xA;SET Processing_end=SYSDATETIME(),&#xA;&#x9;Row_count_end=(SELECT COUNT(*) FROM [dbo].[BME280]),&#xA;&#x9;Success=1,&#xA;&#x9;Items_processed=?,&#xA;&#x9;Items_successful=?,&#xA;&#x9;Items_error=?&#xA;WHERE Audit_key=?;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          SQLTask:SqlStatementSource="UPDATE [log].[etl_executions]&#xA;SET Processing_end=SYSDATETIME(),&#xA;&#x9;Row_count_end=(SELECT COUNT(*) FROM [dbo].[anemometer]),&#xA;&#x9;Success=1,&#xA;&#x9;Items_processed=?,&#xA;&#x9;Items_successful=?,&#xA;&#x9;Items_error=?&#xA;WHERE Audit_key=?;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
             SQLTask:DtsVariableName="User::Number_of_files_processed"
@@ -1158,7 +1150,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{1F5C9E89-7428-4633-8284-106E56C92E2C}"
+      DTS:DTSID="{4310A4B7-D349-40DE-9CF6-5992906FAAF9}"
       DTS:From="Package\SQL - Create package audit row"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -1166,7 +1158,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{5773B5BF-B76F-4FF0-8D85-377A570065DE}"
+      DTS:DTSID="{59635498-D7B1-4ABD-9159-934B2D953138}"
       DTS:From="Package\FCH - Process BME280 data"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -1185,9 +1177,47 @@
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="227,42"
-          Id="Package\FCH - Process BME280 data\DFT - Process BME280 data file"
-          TopLeft="277.071428571429,99.8571428571427" />
+          Size="248,42"
+          Id="Package\FCH - Process BME280 data\DFT - Process anemometer data file"
+          TopLeft="258.071428571429,99.8571428571427" />
+        <NodeLayout
+          Size="203,42"
+          Id="Package\FCH - Process BME280 data\EXP - Increment file count"
+          TopLeft="563.785714285714,49.2857142857141" />
+        <NodeLayout
+          Size="229,42"
+          Id="Package\FCH - Process BME280 data\SQC - Perform error actions\EXP - Increment error file count"
+          TopLeft="25.5,24.0714285714286" />
+        <NodeLayout
+          Size="204,42"
+          Id="Package\FCH - Process BME280 data\SQC - Perform error actions\FST - Move file to error dir"
+          TopLeft="30.7142857142858,91.2142857142858" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="275,188"
+          Size="275,231"
+          Id="Package\FCH - Process BME280 data\SQC - Perform error actions"
+          TopLeft="422.857142857143,188.714285714286" />
+        <NodeLayout
+          Size="242,42"
+          Id="Package\FCH - Process BME280 data\SQC - Perform success actions\EXP - Increment success file count"
+          TopLeft="31.0238095238096,173.833333333333" />
+        <NodeLayout
+          Size="228,42"
+          Id="Package\FCH - Process BME280 data\SQC - Perform success actions\FST - Move file to processed dir"
+          TopLeft="27.7380952380953,97.5238095238094" />
+        <NodeLayout
+          Size="246,42"
+          Id="Package\FCH - Process BME280 data\SQC - Perform success actions\SQL - Move data from staging table"
+          TopLeft="21.2142857142857,21.2142857142857" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="298,271"
+          Size="298,314"
+          Id="Package\FCH - Process BME280 data\SQC - Perform success actions"
+          TopLeft="27.3571428571429,188.714285714286" />
         <NodeLayout
           Size="209,42"
           Id="Package\FCH - Process BME280 data\SQL - Create task audit row"
@@ -1201,68 +1231,77 @@
           Id="Package\FCH - Process BME280 data\SQL - Truncate staging table"
           TopLeft="282.142857142857,17.8571428571426" />
         <EdgeLayout
-          Id="Package\FCH - Process BME280 data.PrecedenceConstraints[Constraint 4]"
-          TopLeft="239.357142857143,41.4285714285712">
+          Id="Package\FCH - Process BME280 data.PrecedenceConstraints[Constraint]"
+          TopLeft="342.071428571429,141.857142857143">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="42.7857142857142,0"
+              EndConnector="-165.714285714286,46.8571428571433"
               Start="0,0"
-              End="35.2857142857142,0">
+              End="-165.714285714286,39.3571428571433">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="35.2857142857142,0" />
+                    End="0,14.9230769230771" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.9230769230771"
+                    Point2="0,18.9230769230771"
+                    Point3="-4,18.9230769230771" />
+                  <mssgle:LineSegment
+                    End="-161.714285714286,18.9230769230771" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-161.714285714286,18.9230769230771"
+                    Point2="-165.714285714286,18.9230769230771"
+                    Point3="-165.714285714286,22.9230769230771" />
+                  <mssgle:LineSegment
+                    End="-165.714285714286,39.3571428571433" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-100.850385044643,23.9230769230771,35.986484375,9.5537109375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FCH - Process BME280 data.PrecedenceConstraints[Constraint 5]"
-          TopLeft="389.857142857143,59.8571428571426">
+          Id="Package\FCH - Process BME280 data.PrecedenceConstraints[Constraint 1]"
+          TopLeft="422.071428571429,141.857142857143">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,40.0000000000001"
+              EndConnector="138.285714285714,46.8571428571433"
               Start="0,0"
-              End="0,32.5000000000001">
+              End="138.285714285714,39.3571428571433">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,32.5000000000001" />
+                    End="0,14.9230769230771" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.9230769230771"
+                    Point2="0,18.9230769230771"
+                    Point3="4,18.9230769230771" />
+                  <mssgle:LineSegment
+                    End="134.285714285714,18.9230769230771" />
+                  <mssgle:CubicBezierSegment
+                    Point1="134.285714285714,18.9230769230771"
+                    Point2="138.285714285714,18.9230769230771"
+                    Point3="138.285714285714,22.9230769230771" />
+                  <mssgle:LineSegment
+                    End="138.285714285714,39.3571428571433" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="53.901509486607,23.9230769230771,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="246,42"
-          Id="Package\FCH - Process BME280 data\SQC - Perform success actions\SQL - Move data from staging table"
-          TopLeft="21.2142857142857,21.2142857142857" />
-        <NodeLayout
-          Size="228,42"
-          Id="Package\FCH - Process BME280 data\SQC - Perform success actions\FST - Move file to processed dir"
-          TopLeft="27.7380952380953,97.5238095238094" />
-        <NodeLayout
-          Size="242,42"
-          Id="Package\FCH - Process BME280 data\SQC - Perform success actions\EXP - Increment success file count"
-          TopLeft="31.0238095238096,173.833333333333" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="298,271"
-          Size="298,314"
-          Id="Package\FCH - Process BME280 data\SQC - Perform success actions"
-          TopLeft="27.3571428571429,188.714285714286" />
         <EdgeLayout
           Id="Package\FCH - Process BME280 data.PrecedenceConstraints[Constraint 2]"
           TopLeft="325.357142857143,345.714285714286">
@@ -1296,97 +1335,6 @@
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="24.0526897321429,-17.609375,50.60890625,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="203,42"
-          Id="Package\FCH - Process BME280 data\EXP - Increment file count"
-          TopLeft="563.785714285714,49.2857142857141" />
-        <NodeLayout
-          Size="229,42"
-          Id="Package\FCH - Process BME280 data\SQC - Perform error actions\EXP - Increment error file count"
-          TopLeft="25.5,24.0714285714286" />
-        <NodeLayout
-          Size="204,42"
-          Id="Package\FCH - Process BME280 data\SQC - Perform error actions\FST - Move file to error dir"
-          TopLeft="30.7142857142858,91.2142857142858" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="275,188"
-          Size="275,231"
-          Id="Package\FCH - Process BME280 data\SQC - Perform error actions"
-          TopLeft="422.857142857143,188.714285714286" />
-        <EdgeLayout
-          Id="Package\FCH - Process BME280 data.PrecedenceConstraints[Constraint]"
-          TopLeft="354.071428571429,141.857142857143">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-177.714285714286,46.8571428571429"
-              Start="0,0"
-              End="-177.714285714286,39.3571428571429">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,14.9396325459318" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,14.9396325459318"
-                    Point2="0,18.9396325459318"
-                    Point3="-4,18.9396325459318" />
-                  <mssgle:LineSegment
-                    End="-173.714285714286,18.9396325459318" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-173.714285714286,18.9396325459318"
-                    Point2="-177.714285714286,18.9396325459318"
-                    Point3="-177.714285714286,22.9396325459318" />
-                  <mssgle:LineSegment
-                    End="-177.714285714286,39.3571428571429" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-106.850385044643,23.9396325459318,35.986484375,9.5537109375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\FCH - Process BME280 data.PrecedenceConstraints[Constraint 1]"
-          TopLeft="427.071428571429,141.857142857143">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="133.285714285714,46.8571428571429"
-              Start="0,0"
-              End="133.285714285714,39.3571428571429">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,14.9396325459318" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,14.9396325459318"
-                    Point2="0,18.9396325459318"
-                    Point3="4,18.9396325459318" />
-                  <mssgle:LineSegment
-                    End="129.285714285714,18.9396325459318" />
-                  <mssgle:CubicBezierSegment
-                    Point1="129.285714285714,18.9396325459318"
-                    Point2="133.285714285714,18.9396325459318"
-                    Point3="133.285714285714,22.9396325459318" />
-                  <mssgle:LineSegment
-                    End="133.285714285714,39.3571428571429" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="51.4015094866072,23.9396325459318,30.4826953125,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -1426,6 +1374,50 @@
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FCH - Process BME280 data.PrecedenceConstraints[Constraint 4]"
+          TopLeft="239.357142857143,41.4285714285712">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="42.7857142857142,0"
+              Start="0,0"
+              End="35.2857142857142,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="35.2857142857142,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FCH - Process BME280 data.PrecedenceConstraints[Constraint 5]"
+          TopLeft="385.607142857143,59.8571428571426">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.0000000000001"
+              Start="0,0"
+              End="0,32.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
@@ -1437,20 +1429,24 @@
           Size="229,42"
           Id="Package\SQL - Create package audit row"
           TopLeft="358.357142857142,46.7142857142857" />
+        <NodeLayout
+          Size="233,42"
+          Id="Package\SQL - Finalise package audit row"
+          TopLeft="356.714285714285,761.428571428572" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="470.428571428571,88.7142857142857">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,26.7857142857144"
+              EndConnector="0,26.7857142857143"
               Start="0,0"
-              End="0,19.2857142857144">
+              End="0,19.2857142857143">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.2857142857144" />
+                    End="0,19.2857142857143" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1459,13 +1455,9 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="233,42"
-          Id="Package\SQL - Finalise package audit row"
-          TopLeft="356.714285714285,761.428571428572" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="470.607142857143,719.5">
+          TopLeft="470.607142857142,719.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1489,50 +1481,28 @@
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\FCH - Process BME280 data\DFT - Process BME280 data file">
+    design-time-name="Package\FCH - Process BME280 data\DFT - Process anemometer data file">
     <LayoutInfo>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="218,42"
-          Id="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file"
-          TopLeft="188,68" />
+          Size="192,42"
+          Id="Package\FCH - Process BME280 data\DFT - Process anemometer data file\DER - Add audit column"
+          TopLeft="204,225" />
         <NodeLayout
           Size="182,42"
-          Id="Package\FCH - Process BME280 data\DFT - Process BME280 data file\CNT - Rows extracted"
+          Id="Package\FCH - Process BME280 data\DFT - Process anemometer data file\CNT - Rows extracted"
           TopLeft="204,150" />
         <NodeLayout
-          Size="248,42"
-          Id="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280"
+          Size="240,42"
+          Id="Package\FCH - Process BME280 data\DFT - Process anemometer data file\FLT SRC - anemometer source file"
+          TopLeft="188,68" />
+        <NodeLayout
+          Size="269,42"
+          Id="Package\FCH - Process BME280 data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer"
           TopLeft="174,304" />
         <EdgeLayout
-          Id="Package\FCH - Process BME280 data\DFT - Process BME280 data file.Paths[Flat File Source Output]"
-          TopLeft="296,110">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,40"
-              Start="0,0"
-              End="0,32.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="192,42"
-          Id="Package\FCH - Process BME280 data\DFT - Process BME280 data file\DER - Add audit column"
-          TopLeft="204,225" />
-        <EdgeLayout
-          Id="Package\FCH - Process BME280 data\DFT - Process BME280 data file.Paths[Row Count Output 1]"
+          Id="Package\FCH - Process BME280 data\DFT - Process anemometer data file.Paths[Row Count Output 1]"
           TopLeft="297.5,192">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -1554,19 +1524,65 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FCH - Process BME280 data\DFT - Process BME280 data file.Paths[Derived Column Output]"
-          TopLeft="299,267">
+          Id="Package\FCH - Process BME280 data\DFT - Process anemometer data file.Paths[Flat File Source Output]"
+          TopLeft="308,110">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,37"
+              EndConnector="-13,40"
               Start="0,0"
-              End="0,29.5">
+              End="-13,32.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.5" />
+                    End="0,16" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16"
+                    Point2="0,20"
+                    Point3="-4,20" />
+                  <mssgle:LineSegment
+                    End="-9,20" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-9,20"
+                    Point2="-13,20"
+                    Point3="-13,24" />
+                  <mssgle:LineSegment
+                    End="-13,32.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FCH - Process BME280 data\DFT - Process anemometer data file.Paths[Derived Column Output]"
+          TopLeft="300,267">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="8.5,37"
+              Start="0,0"
+              End="8.5,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.5"
+                    Point2="0,18.5"
+                    Point3="4,18.5" />
+                  <mssgle:LineSegment
+                    End="4.5,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4.5,18.5"
+                    Point2="8.5,18.5"
+                    Point3="8.5,22.5" />
+                  <mssgle:LineSegment
+                    End="8.5,29.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1579,7 +1595,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280">
+    design-time-name="Package\FCH - Process BME280 data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
