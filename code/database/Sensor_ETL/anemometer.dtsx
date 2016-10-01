@@ -13,8 +13,8 @@
   DTS:ObjectName="anemometer"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="69"
-  DTS:VersionGUID="{EE3646F9-B9D1-41CE-A613-D933DD4A5CAA}">
+  DTS:VersionBuild="71"
+  DTS:VersionGUID="{89DB7E5B-A210-4E08-BF4C-A280B565D192}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -39,10 +39,10 @@
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="7"
+              DTS:DataType="304"
               DTS:TextQualified="True"
               DTS:ObjectName="SYSTEM_TIMESTAMP"
-              DTS:DTSID="{E3EF2F58-C00E-4A15-B8C7-E032EB2F5639}"
+              DTS:DTSID="{655FF73E-5307-475A-9600-454E416B51CC}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -50,7 +50,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="SYSTEM_EPOCH_TIME"
-              DTS:DTSID="{06BB454B-4EE7-46A4-997A-928C0BA2A265}"
+              DTS:DTSID="{418E3C7A-17AC-486A-AAF9-7E3CC8D13B72}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -58,7 +58,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="SYSTEM_MILLISECONDS"
-              DTS:DTSID="{11596FE0-6F57-4312-8F91-0E8E8D96C0AA}"
+              DTS:DTSID="{E416C7A6-512E-4EBE-ACDE-EB13043D177D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -66,7 +66,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="WIND_SPEED"
-              DTS:DTSID="{06E1F3EA-6BCF-43DB-8365-66623219B577}"
+              DTS:DTSID="{37A944BC-448B-47A3-BA5F-26705265E7FD}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -74,7 +74,7 @@
               DTS:DataType="2"
               DTS:TextQualified="True"
               DTS:ObjectName="RAW_VALUE"
-              DTS:DTSID="{579843BA-89C1-4EF4-9578-E49B68682376}"
+              DTS:DTSID="{12AAE0D3-D6CF-4CC8-BCE7-DFB2FC5D76EE}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -145,7 +145,6 @@
     <DTS:Executable
       DTS:refId="Package\FCH - Process BME280 data"
       DTS:CreationName="STOCK:FOREACHLOOP"
-      DTS:Description="BME280"
       DTS:DTSID="{5BBBF176-0D53-4697-B9E6-0D8CA4EBE829}"
       DTS:ExecutableType="STOCK:FOREACHLOOP"
       DTS:LocaleID="-1"
@@ -340,12 +339,10 @@
                       <outputColumns>
                         <outputColumn
                           refId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].Columns[SYSTEM_TIMESTAMP]"
-                          codePage="1252"
-                          dataType="str"
+                          dataType="dbTimeStamp2"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].ExternalColumns[SYSTEM_TIMESTAMP]"
-                          length="28"
                           lineageId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].Columns[SYSTEM_TIMESTAMP]"
                           name="SYSTEM_TIMESTAMP"
                           truncationRowDisposition="FailComponent">
@@ -445,7 +442,7 @@
                         isUsed="True">
                         <externalMetadataColumn
                           refId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].ExternalColumns[SYSTEM_TIMESTAMP]"
-                          dataType="date"
+                          dataType="dbTimeStamp2"
                           name="SYSTEM_TIMESTAMP" />
                         <externalMetadataColumn
                           refId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].ExternalColumns[SYSTEM_EPOCH_TIME]"
@@ -568,9 +565,7 @@
                       <inputColumns>
                         <inputColumn
                           refId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Inputs[OLE DB Destination Input].Columns[SYSTEM_TIMESTAMP]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="28"
+                          cachedDataType="dbTimeStamp2"
                           cachedName="SYSTEM_TIMESTAMP"
                           externalMetadataColumnId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\OLE DST - Sensor DB table anemometer.Inputs[OLE DB Destination Input].ExternalColumns[System_timestamp]"
                           lineageId="Package\FCH - Process BME280 data\DFT - Process anemometer data file\FLT SRC - anemometer source file.Outputs[Flat File Source Output].Columns[SYSTEM_TIMESTAMP]" />
@@ -691,7 +686,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="EXP - Increment file count"
           DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="6">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ExpressionTask
@@ -717,7 +712,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="EXP - Increment error file count"
               DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="1">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:ObjectData>
                 <ExpressionTask
@@ -734,7 +729,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="FST - Move file to error dir"
               DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="2">
               <DTS:Variables />
               <DTS:EventHandlers>
                 <DTS:EventHandler
@@ -814,7 +809,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="EXP - Increment success file count"
               DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="2">
+              DTS:ThreadHint="3">
               <DTS:Variables />
               <DTS:ObjectData>
                 <ExpressionTask
@@ -831,7 +826,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="FST - Move file to processed dir"
               DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="3">
+              DTS:ThreadHint="4">
               <DTS:Variables />
               <DTS:EventHandlers>
                 <DTS:EventHandler
@@ -899,7 +894,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="SQL - Move data from staging table"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="4">
+              DTS:ThreadHint="5">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -964,7 +959,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="SQL - Finalise task audit row"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="5">
+          DTS:ThreadHint="6">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1057,8 +1052,8 @@
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{F67B2FFB-2328-4DA9-BFF8-AC11709CF8F5}"
-          DTS:ObjectName="{F67B2FFB-2328-4DA9-BFF8-AC11709CF8F5}"
+          DTS:DTSID="{DAF62DC2-BD49-47A2-BF2B-F4C52C22EE63}"
+          DTS:ObjectName="{DAF62DC2-BD49-47A2-BF2B-F4C52C22EE63}"
           DTS:ValueIndex="0"
           DTS:VariableName="User::Data_source_filename" />
       </DTS:ForEachVariableMappings>

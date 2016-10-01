@@ -12,8 +12,8 @@
   DTS:ObjectName="Master"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="55"
-  DTS:VersionGUID="{4F596229-5D54-43DA-8945-F557A0949AB6}">
+  DTS:VersionBuild="56"
+  DTS:VersionGUID="{950C2025-E27A-47D4-B6F5-618C27546E66}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -54,12 +54,12 @@
               <PackageName>anemometer.dtsx</PackageName>
               <EncryptedData
                 Type="http://www.w3.org/2001/04/xmlenc#Element"
-                Salt="K3l7Ljqvmw=="
-                IV="hYvejZ4VQy8=" xmlns="http://www.w3.org/2001/04/xmlenc#">
+                Salt="2vNyuYvWlw=="
+                IV="WXcZ1J4PIR4=" xmlns="http://www.w3.org/2001/04/xmlenc#">
                 <EncryptionMethod
                   Algorithm="http://www.w3.org/2001/04/xmlenc#tripledes-cbc" />
                 <CipherData>
-                  <CipherValue>hYvejZ4VQy+4nylmaWye75Kp0Oh4NyoJlm/0l9V4rIZpXysnVo2K3PFeO2DWcU5MZ+vwwXkIIpqkcPDg6n0vx1COnuB1VgU0</CipherValue>
+                  <CipherValue>WXcZ1J4PIR7fdttk6vmbxzKh2PMugv2dDE995+q3s3GpaDvzg3W74poHcz4Q5KCfYPsH8ttbQriFi2+KJ3aRABIm5GSZRIyT</CipherValue>
                 </CipherData>
               </EncryptedData>
               <ParameterAssignment>
@@ -85,12 +85,43 @@
               <PackageName>BME280.dtsx</PackageName>
               <EncryptedData
                 Type="http://www.w3.org/2001/04/xmlenc#Element"
-                Salt="7QjRx6Vw5Q=="
-                IV="9EMwqqhYe9w=" xmlns="http://www.w3.org/2001/04/xmlenc#">
+                Salt="so2TL/wyPQ=="
+                IV="L+ToIPio5ac=" xmlns="http://www.w3.org/2001/04/xmlenc#">
                 <EncryptionMethod
                   Algorithm="http://www.w3.org/2001/04/xmlenc#tripledes-cbc" />
                 <CipherData>
-                  <CipherValue>9EMwqqhYe9wfJdyBZ1ndyxaOq4k4eBKcmNJxOYNOORfaiF3QHyhXBeqL3KdPSOzm61Q/T9eIUHQ1jxZtLxS3jtTKtKLhfXO1</CipherValue>
+                  <CipherValue>L+ToIPio5acJVTgo87C81gbxUEhU39Q57b2xGqIkmv7HXGvQn6ElsfuUVnTsEuSO3bt608Y3r4qseXWXNw2IlTA70NgN0UdJ</CipherValue>
+                </CipherData>
+              </EncryptedData>
+              <ParameterAssignment>
+                <ParameterName>Master_audit_key</ParameterName>
+                <BindedVariableOrParameterName>User::Master_audit_key</BindedVariableOrParameterName>
+              </ParameterAssignment>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\SQC - Execute sensor packages\EPT - TSL2156"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{f93cbbe3-6fb6-4da9-a34e-c05d79c69051}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="EPT - TSL2156"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>TSL2156.dtsx</PackageName>
+              <EncryptedData
+                Type="http://www.w3.org/2001/04/xmlenc#Element"
+                Salt="O4sTjAqBGQ=="
+                IV="R4G1nrIssrQ=" xmlns="http://www.w3.org/2001/04/xmlenc#">
+                <EncryptionMethod
+                  Algorithm="http://www.w3.org/2001/04/xmlenc#tripledes-cbc" />
+                <CipherData>
+                  <CipherValue>R4G1nrIssrTVv9BYlYAp559BrZhvcPKoggi3ski/SB0bVOc9RI81OyFcEYsDGpDSHHo5P2/F78ecR0aTxYTPUIj3FOGoIEzH</CipherValue>
                 </CipherData>
               </EncryptedData>
               <ParameterAssignment>
@@ -252,6 +283,25 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="168,42"
+          Id="Package\SQC - Execute sensor packages\EPT - Anemometer"
+          TopLeft="34,90" />
+        <NodeLayout
+          Size="146,42"
+          Id="Package\SQC - Execute sensor packages\EPT - BME280"
+          TopLeft="27,25" />
+        <NodeLayout
+          Size="148,42"
+          Id="Package\SQC - Execute sensor packages\EPT - TSL2156"
+          TopLeft="58,147" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="274,244"
+          Size="274,287"
+          Id="Package\SQC - Execute sensor packages"
+          TopLeft="316,226" />
+        <NodeLayout
           Size="222,42"
           Id="Package\SQL - Create master audit row"
           TopLeft="338.666666666667,133.666666666667" />
@@ -259,35 +309,20 @@
           Size="226,42"
           Id="Package\SQL - Finalise master audit row"
           TopLeft="340.333333333333,536" />
-        <NodeLayout
-          Size="146,42"
-          Id="Package\SQC - Execute sensor packages\EPT - BME280"
-          TopLeft="27,25" />
-        <NodeLayout
-          Size="168,42"
-          Id="Package\SQC - Execute sensor packages\EPT - Anemometer"
-          TopLeft="34,90" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="274,209"
-          Size="274,252"
-          Id="Package\SQC - Execute sensor packages"
-          TopLeft="316,226" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="451.333333333333,175.666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,50.3333333333333"
+              EndConnector="0,50.333333333333"
               Start="0,0"
-              End="0,42.8333333333333">
+              End="0,42.833333333333">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,42.8333333333333" />
+                    End="0,42.833333333333" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -298,25 +333,25 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="453.166666666667,478">
+          TopLeft="453.166666666667,513">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,58"
+              EndConnector="0,23"
               Start="0,0"
-              End="0,50.5">
+              End="0,15.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,50.5" />
+                    End="0,15.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-25.304453125,19.4453125,50.60890625,11.609375"
+              BoundingBox="-25.304453125,1.9453125,50.60890625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
