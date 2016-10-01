@@ -6,7 +6,7 @@ if mountpoint -q $REMOTE_DIR; then
 	echo "Remote filesystem is mounted."
 else
 	echo "Mounting remote filesystem now."
-	sudo mount /home/pi/eluria
+	sudo mount $REMOTE_DIR
 fi
 
 CURRENT_TIMESTAMP=`date +%Y%m%d%H%M%S`
@@ -17,3 +17,5 @@ do
 	mv $f $CURRENT_FILE
 	mv $CURRENT_FILE $REMOTE_DIR
 done
+
+sudo umount $REMOTE_DIR
