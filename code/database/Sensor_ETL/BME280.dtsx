@@ -13,8 +13,8 @@
   DTS:ObjectName="BME280"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="64"
-  DTS:VersionGUID="{5A48357C-4225-451B-A5A6-B3AFE3CD3FA6}">
+  DTS:VersionBuild="65"
+  DTS:VersionGUID="{00CF6697-707C-4D8B-838D-713E2D7E1A55}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -904,7 +904,7 @@
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
                   SQLTask:Connection="{BAFB3E71-BAF6-462F-A87F-5E1F8D40E45C}"
-                  SQLTask:SqlStatementSource="INSERT INTO [dbo].[BME280] (&#xA;&#x9;[System_timestamp],&#xA;&#x9;[Sensor_timestamp],&#xA;&#x9;[Temperature_celcius],&#xA;&#x9;[Barometric_pressure],&#xA;&#x9;[Humidity]&#xA;)&#xA;SELECT [System_timestamp],&#xA;&#x9;[Sensor_timestamp],&#xA;&#x9;[Temperature_celcius],&#xA;&#x9;[Barometric_pressure],&#xA;&#x9;[Humidity]&#xA;FROM [staging].[BME280];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+                  SQLTask:SqlStatementSource="INSERT INTO [dbo].[BME280] (&#xA;&#x9;[System_timestamp],&#xA;&#x9;[Sensor_timestamp],&#xA;&#x9;[Temperature_celcius],&#xA;&#x9;[Barometric_pressure],&#xA;&#x9;[Humidity],&#xA;&#x9;[Insert_audit_key]&#xA;)&#xA;SELECT [System_timestamp],&#xA;&#x9;[Sensor_timestamp],&#xA;&#x9;[Temperature_celcius],&#xA;&#x9;[Barometric_pressure],&#xA;&#x9;[Humidity],&#xA;&#x9;[Insert_audit_key]&#xA;FROM [staging].[BME280];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
           </DTS:Executables>
