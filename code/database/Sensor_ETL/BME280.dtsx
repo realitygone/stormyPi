@@ -7,14 +7,14 @@
   DTS:CreatorName="HOME\mike"
   DTS:DTSID="{EA70AE23-CC24-48FE-A4FB-FE378BD909CC}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="13.0.2150.2"
+  DTS:LastModifiedProductVersion="13.0.2164.0"
   DTS:LocaleID="3081"
   DTS:MaxErrorCount="999"
   DTS:ObjectName="BME280"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="65"
-  DTS:VersionGUID="{00CF6697-707C-4D8B-838D-713E2D7E1A55}">
+  DTS:VersionBuild="66"
+  DTS:VersionGUID="{24B94557-74FC-44E5-BE16-13E0249DF0BE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -40,9 +40,10 @@
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
               DTS:DataType="304"
+              DTS:DataScale="7"
               DTS:TextQualified="True"
               DTS:ObjectName="SYSTEM_TIMESTAMP"
-              DTS:DTSID="{27941485-D894-40AC-A8D5-FEF237F573AB}"
+              DTS:DTSID="{C08AFFA2-4925-4AB4-AC4E-4E9CF2997300}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -50,7 +51,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="SENSOR_TIMESTAMP"
-              DTS:DTSID="{1E8B4DCC-B8A0-4448-8114-7A6BF2802DEE}"
+              DTS:DTSID="{5F8CEC47-E368-453E-84BC-9E29E522CE6E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -58,7 +59,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="SENSOR_TEMP"
-              DTS:DTSID="{193CDE8B-9F28-4A59-BD81-B876117B1AAB}"
+              DTS:DTSID="{BF90CCF3-1FF1-47CE-9D14-64EA8C2F1E78}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -66,7 +67,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="SENSOR_PRESSURE"
-              DTS:DTSID="{3EBEE259-3461-46F3-B40C-1C2AD3A2F397}"
+              DTS:DTSID="{F8159221-BA1F-4079-998E-0E606B542F61}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -74,7 +75,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="SENSOR_HUMIDITY"
-              DTS:DTSID="{50D075D0-0CC6-4775-8182-33C6E8FC16FB}"
+              DTS:DTSID="{87EB3A19-0E1C-4C4B-88E6-DC772B2B0ED6}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -345,6 +346,7 @@
                           externalMetadataColumnId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output].ExternalColumns[SYSTEM_TIMESTAMP]"
                           lineageId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output].Columns[SYSTEM_TIMESTAMP]"
                           name="SYSTEM_TIMESTAMP"
+                          scale="7"
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
@@ -443,7 +445,8 @@
                         <externalMetadataColumn
                           refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output].ExternalColumns[SYSTEM_TIMESTAMP]"
                           dataType="dbTimeStamp2"
-                          name="SYSTEM_TIMESTAMP" />
+                          name="SYSTEM_TIMESTAMP"
+                          scale="7" />
                         <externalMetadataColumn
                           refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output].ExternalColumns[SENSOR_TIMESTAMP]"
                           dataType="r4"
@@ -579,6 +582,7 @@
                           refId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Inputs[OLE DB Destination Input].Columns[SYSTEM_TIMESTAMP]"
                           cachedDataType="dbTimeStamp2"
                           cachedName="SYSTEM_TIMESTAMP"
+                          cachedScale="7"
                           externalMetadataColumnId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\OLE DST - Sensor DB table BME280.Inputs[OLE DB Destination Input].ExternalColumns[System_timestamp]"
                           lineageId="Package\FCH - Process BME280 data\DFT - Process BME280 data file\FLT SRC - BME280 source file.Outputs[Flat File Source Output].Columns[SYSTEM_TIMESTAMP]" />
                         <inputColumn
@@ -814,7 +818,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="EXP - Increment success file count"
               DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="3">
+              DTS:ThreadHint="4">
               <DTS:Variables />
               <DTS:ObjectData>
                 <ExpressionTask
@@ -831,7 +835,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="FST - Move file to processed dir"
               DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="4">
+              DTS:ThreadHint="3">
               <DTS:Variables />
               <DTS:EventHandlers>
                 <DTS:EventHandler

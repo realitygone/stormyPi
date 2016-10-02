@@ -7,14 +7,14 @@
   DTS:CreatorName="HOME\mike"
   DTS:DTSID="{ED8642B6-8211-41EB-ADBA-082022889C55}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="13.0.2150.2"
+  DTS:LastModifiedProductVersion="13.0.2164.0"
   DTS:LocaleID="3081"
   DTS:MaxErrorCount="999"
   DTS:ObjectName="SI1145"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="68"
-  DTS:VersionGUID="{57ACAC4D-50A5-417C-8F6E-490168E9A355}">
+  DTS:VersionBuild="70"
+  DTS:VersionGUID="{7580EF7D-2485-4977-8B4A-594736580D7E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -39,10 +39,11 @@
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="135"
+              DTS:DataType="304"
+              DTS:DataScale="7"
               DTS:TextQualified="True"
               DTS:ObjectName="SYSTEM_TIMESTAMP"
-              DTS:DTSID="{F8577D42-17DD-4276-82AA-564F951C45D4}"
+              DTS:DTSID="{B9902601-A01B-4848-ACA5-A3ECB0D06845}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -50,7 +51,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="VIS"
-              DTS:DTSID="{B7AC118F-A5FD-4A78-8E25-C7318C693B13}"
+              DTS:DTSID="{867F9AF8-84EF-4347-93C1-2F0B4E00D433}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -58,7 +59,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="IR"
-              DTS:DTSID="{78E65B34-5653-4957-A903-3E4022F24873}"
+              DTS:DTSID="{3E4F3B53-2046-498E-9C42-4F4F8B8C4486}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -66,7 +67,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="UV"
-              DTS:DTSID="{32E1CD92-58E6-423A-A2AF-6B0C237F4905}"
+              DTS:DTSID="{7482299A-9448-40F4-8478-69CD5AD49A03}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -337,6 +338,7 @@
                           externalMetadataColumnId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\FLT SRC - SI1145 source file.Outputs[Flat File Source Output].ExternalColumns[SYSTEM_TIMESTAMP]"
                           lineageId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\FLT SRC - SI1145 source file.Outputs[Flat File Source Output].Columns[SYSTEM_TIMESTAMP]"
                           name="SYSTEM_TIMESTAMP"
+                          scale="7"
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
@@ -414,8 +416,9 @@
                         isUsed="True">
                         <externalMetadataColumn
                           refId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\FLT SRC - SI1145 source file.Outputs[Flat File Source Output].ExternalColumns[SYSTEM_TIMESTAMP]"
-                          dataType="dbTimeStamp"
-                          name="SYSTEM_TIMESTAMP" />
+                          dataType="dbTimeStamp2"
+                          name="SYSTEM_TIMESTAMP"
+                          scale="7" />
                         <externalMetadataColumn
                           refId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\FLT SRC - SI1145 source file.Outputs[Flat File Source Output].ExternalColumns[VIS]"
                           dataType="i4"
@@ -535,6 +538,7 @@
                           refId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\OLE DST - Sensor DB table SI1145.Inputs[OLE DB Destination Input].Columns[SYSTEM_TIMESTAMP]"
                           cachedDataType="dbTimeStamp2"
                           cachedName="SYSTEM_TIMESTAMP"
+                          cachedScale="7"
                           externalMetadataColumnId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\OLE DST - Sensor DB table SI1145.Inputs[OLE DB Destination Input].ExternalColumns[System_timestamp]"
                           lineageId="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\FLT SRC - SI1145 source file.Outputs[Flat File Source Output].Columns[SYSTEM_TIMESTAMP]" />
                         <inputColumn
@@ -643,7 +647,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="EXP - Increment file count"
           DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="6">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <ExpressionTask
@@ -669,7 +673,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="EXP - Increment error file count"
               DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="4">
+              DTS:ThreadHint="1">
               <DTS:Variables />
               <DTS:ObjectData>
                 <ExpressionTask
@@ -686,7 +690,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="FST - Move file to error dir"
               DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="3">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:EventHandlers>
                 <DTS:EventHandler
@@ -766,7 +770,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="EXP - Increment success file count"
               DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="2">
+              DTS:ThreadHint="3">
               <DTS:Variables />
               <DTS:ObjectData>
                 <ExpressionTask
@@ -783,7 +787,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="FST - Move file to processed dir"
               DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="5">
               <DTS:Variables />
               <DTS:EventHandlers>
                 <DTS:EventHandler
@@ -851,7 +855,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="SQL - Move data from staging table"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="1">
+              DTS:ThreadHint="4">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -916,7 +920,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="SQL - Finalise task audit row"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="5">
+          DTS:ThreadHint="6">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -951,7 +955,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{BAFB3E71-BAF6-462F-A87F-5E1F8D40E45C}"
-              SQLTask:SqlStatementSource="TRUNCATE TABLE [staging].[BME280];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="TRUNCATE TABLE [staging].[SI1145];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -1442,6 +1446,10 @@
           Id="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\DER - Add audit column"
           TopLeft="204,225" />
         <NodeLayout
+          Size="243,42"
+          Id="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\OLE DST - Sensor DB table SI1145"
+          TopLeft="174,304" />
+        <NodeLayout
           Size="182,42"
           Id="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\CNT - Rows extracted"
           TopLeft="204,150" />
@@ -1449,10 +1457,6 @@
           Size="214,42"
           Id="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\FLT SRC - SI1145 source file"
           TopLeft="188,68" />
-        <NodeLayout
-          Size="243,42"
-          Id="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file\OLE DST - Sensor DB table SI1145"
-          TopLeft="174,304" />
         <EdgeLayout
           Id="Package\FCH - Process SI1145 data\DFT - Process SI1145 data file.Paths[Row Count Output 1]"
           TopLeft="297.5,192">

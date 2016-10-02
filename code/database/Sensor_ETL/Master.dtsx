@@ -7,13 +7,13 @@
   DTS:CreatorName="HOME\mike"
   DTS:DTSID="{A8769E97-0059-40A7-8C47-7278DA8B31C4}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="13.0.2150.2"
+  DTS:LastModifiedProductVersion="13.0.2164.0"
   DTS:LocaleID="3081"
   DTS:ObjectName="Master"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="59"
-  DTS:VersionGUID="{3E712DDA-47B8-4804-8BB3-2EC4108C5717}">
+  DTS:VersionBuild="60"
+  DTS:VersionGUID="{D38BE4E7-C1E4-4F99-B3D6-9C12CCC6197A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -54,12 +54,12 @@
               <PackageName>anemometer.dtsx</PackageName>
               <EncryptedData
                 Type="http://www.w3.org/2001/04/xmlenc#Element"
-                Salt="EuLr+P6B1A=="
-                IV="3xDFIdmXuS8=" xmlns="http://www.w3.org/2001/04/xmlenc#">
+                Salt="n0jxsNLwkw=="
+                IV="C3tiCnmInr0=" xmlns="http://www.w3.org/2001/04/xmlenc#">
                 <EncryptionMethod
                   Algorithm="http://www.w3.org/2001/04/xmlenc#tripledes-cbc" />
                 <CipherData>
-                  <CipherValue>3xDFIdmXuS8uzzVrxmTl4KaMQ0CZStgYPoLiOegZpeg4U9P7FpnvOzsn5+Wb7XC1XLkfeSHAVy/M5iMLoUxMB3SBAVrW5GEL</CipherValue>
+                  <CipherValue>C3tiCnmInr2FOVYMBsWjLhtS1mE7Yrvi8BiYzY8j82p8lVRMkQa8BkWRVsUPJNPnS7M1kah7GpZ9HTYPO0m6dz0WJjgqUVGg</CipherValue>
                 </CipherData>
               </EncryptedData>
               <ParameterAssignment>
@@ -85,12 +85,12 @@
               <PackageName>BME280.dtsx</PackageName>
               <EncryptedData
                 Type="http://www.w3.org/2001/04/xmlenc#Element"
-                Salt="x+3tsNaqeA=="
-                IV="c7iaZ2uKxeU=" xmlns="http://www.w3.org/2001/04/xmlenc#">
+                Salt="oDpzU97lSQ=="
+                IV="OSUqO+ajQoM=" xmlns="http://www.w3.org/2001/04/xmlenc#">
                 <EncryptionMethod
                   Algorithm="http://www.w3.org/2001/04/xmlenc#tripledes-cbc" />
                 <CipherData>
-                  <CipherValue>c7iaZ2uKxeU0GmlFyybzBO1T/vtYWWSXt3k4dQ+7dEk9QDTyL9ztqSGgPKj4LMjGTjglQDefhOhOHq+cfl2lyaonkIq2Peqn</CipherValue>
+                  <CipherValue>OSUqO+ajQoML/tOi76o9UeTMZYdnNNKIt/iYlNqOGAmzCvvb8kt9ikq4RFZZeBhhUIsZ3VdAfdCoeGlRTIvEXQV+bxtms8vz</CipherValue>
                 </CipherData>
               </EncryptedData>
               <ParameterAssignment>
@@ -116,12 +116,12 @@
               <PackageName>SI1145.dtsx</PackageName>
               <EncryptedData
                 Type="http://www.w3.org/2001/04/xmlenc#Element"
-                Salt="D/jdJtiwYg=="
-                IV="DQkNibjqAt0=" xmlns="http://www.w3.org/2001/04/xmlenc#">
+                Salt="hDxI4YCZFg=="
+                IV="dhLEOLwgj84=" xmlns="http://www.w3.org/2001/04/xmlenc#">
                 <EncryptionMethod
                   Algorithm="http://www.w3.org/2001/04/xmlenc#tripledes-cbc" />
                 <CipherData>
-                  <CipherValue>DQkNibjqAt0qpG3aKOenZ7Is0USjivK0e0m+5nUs5FL5u8KfCT0QNDpjO4Qky25cYnx8s2yasbdFrL4mAU5WUFLQriACO80N</CipherValue>
+                  <CipherValue>dhLEOLwgj85QqRZWQ5i7WN4RIWYattLgIME4f4mP2mnwVnKGtQFI1qbgmg9XlFFQkZpsikQLnYecftaMNUPmvHdA2FYezTXM</CipherValue>
                 </CipherData>
               </EncryptedData>
               <ParameterAssignment>
@@ -147,12 +147,12 @@
               <PackageName>TSL2156.dtsx</PackageName>
               <EncryptedData
                 Type="http://www.w3.org/2001/04/xmlenc#Element"
-                Salt="QyI2fK/V2A=="
-                IV="w6i2XGtBN0c=" xmlns="http://www.w3.org/2001/04/xmlenc#">
+                Salt="L+JlM/kO/Q=="
+                IV="hPsBbYFrwyI=" xmlns="http://www.w3.org/2001/04/xmlenc#">
                 <EncryptionMethod
                   Algorithm="http://www.w3.org/2001/04/xmlenc#tripledes-cbc" />
                 <CipherData>
-                  <CipherValue>w6i2XGtBN0cryqd09gblt54qcel41ff2jhfQX4zUHHOESGOYMTtLCVY3v7/Xh1FNhZf2pWtyq5QvzP+daz+n5JhbeRb32Dje</CipherValue>
+                  <CipherValue>hPsBbYFrwyJZMUc9e7gri0DSwT1Lk47m2JFQyjhX4AIB4vHBhHDqjk40l8q7t88TSX2TBR9C4OiZVhV5BqlmrfSLuiyY/Myp</CipherValue>
                 </CipherData>
               </EncryptedData>
               <ParameterAssignment>
@@ -314,21 +314,21 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="168,42"
+          Id="Package\SQC - Execute sensor packages\EPT - Anemometer"
+          TopLeft="185,26" />
+        <NodeLayout
           Size="146,42"
           Id="Package\SQC - Execute sensor packages\EPT - BME280"
           TopLeft="27,25" />
-        <NodeLayout
-          Size="148,42"
-          Id="Package\SQC - Execute sensor packages\EPT - TSL2156"
-          TopLeft="27,75" />
         <NodeLayout
           Size="141,42"
           Id="Package\SQC - Execute sensor packages\EPT - SI1145"
           TopLeft="189,76" />
         <NodeLayout
-          Size="168,42"
-          Id="Package\SQC - Execute sensor packages\EPT - Anemometer"
-          TopLeft="185,26" />
+          Size="148,42"
+          Id="Package\SQC - Execute sensor packages\EPT - TSL2156"
+          TopLeft="27,75" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
@@ -339,25 +339,25 @@
         <NodeLayout
           Size="222,42"
           Id="Package\SQL - Create master audit row"
-          TopLeft="101.39393939394,9.12121212121247" />
+          TopLeft="105.39393939394,24.1212121212125" />
         <NodeLayout
           Size="226,42"
           Id="Package\SQL - Finalise master audit row"
-          TopLeft="104.060606060606,360.454545454545" />
+          TopLeft="105.060606060606,309.454545454545" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="215.560606060606,51.1212121212125">
+          TopLeft="217.560606060606,66.1212121212125">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,40.3333333333331"
+              EndConnector="0,25.333333333333"
               Start="0,0"
-              End="0,32.8333333333331">
+              End="0,17.833333333333">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,32.8333333333331" />
+                    End="0,17.833333333333" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -368,25 +368,25 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="217.893939393939,283.454545454546">
+          TopLeft="218.393939393939,283.454545454546">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,76.9999999999998"
+              EndConnector="0,25.9999999999995"
               Start="0,0"
-              End="0,69.4999999999998">
+              End="0,18.4999999999995">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,69.4999999999998" />
+                    End="0,18.4999999999995" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-25.304453125,28.9453124999999,50.60890625,11.609375"
+              BoundingBox="-25.304453125,3.44531249999974,50.60890625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>

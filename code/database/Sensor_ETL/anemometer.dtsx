@@ -7,14 +7,14 @@
   DTS:CreatorName="HOME\mike"
   DTS:DTSID="{91DEB11E-10C7-403F-A65C-FFAB272C237F}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="13.0.2150.2"
+  DTS:LastModifiedProductVersion="13.0.2164.0"
   DTS:LocaleID="3081"
   DTS:MaxErrorCount="999"
   DTS:ObjectName="anemometer"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="72"
-  DTS:VersionGUID="{23F77A53-C051-4007-A75D-DFAE21987C00}">
+  DTS:VersionBuild="74"
+  DTS:VersionGUID="{8509B788-5E0F-4A70-8732-66755E2FAF4E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -686,7 +686,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="EXP - Increment file count"
           DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="6">
           <DTS:Variables />
           <DTS:ObjectData>
             <ExpressionTask
@@ -712,7 +712,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="EXP - Increment error file count"
               DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="3">
               <DTS:Variables />
               <DTS:ObjectData>
                 <ExpressionTask
@@ -729,7 +729,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="FST - Move file to error dir"
               DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="2">
+              DTS:ThreadHint="4">
               <DTS:Variables />
               <DTS:EventHandlers>
                 <DTS:EventHandler
@@ -809,7 +809,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="EXP - Increment success file count"
               DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="3">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:ObjectData>
                 <ExpressionTask
@@ -826,7 +826,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="FST - Move file to processed dir"
               DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="4">
+              DTS:ThreadHint="2">
               <DTS:Variables />
               <DTS:EventHandlers>
                 <DTS:EventHandler
@@ -894,7 +894,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="SQL - Move data from staging table"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="5">
+              DTS:ThreadHint="1">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -959,7 +959,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="SQL - Finalise task audit row"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="6">
+          DTS:ThreadHint="5">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -994,7 +994,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{BAFB3E71-BAF6-462F-A87F-5E1F8D40E45C}"
-              SQLTask:SqlStatementSource="TRUNCATE TABLE [staging].[BME280];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="TRUNCATE TABLE [staging].[Anemometer];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -1416,8 +1416,8 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="809,561"
-          Size="809,604"
+          PanelSize="791,518"
+          Size="791,561"
           Id="Package\FCH - Process anemometer data"
           TopLeft="63.4999999999999,115.5" />
         <NodeLayout
@@ -1430,18 +1430,30 @@
           TopLeft="356.714285714285,761.428571428572" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="470.428571428571,88.7142857142857">
+          TopLeft="472.857142857142,88.7142857142857">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,26.7857142857143"
+              EndConnector="-13.8571428571421,26.7857142857143"
               Start="0,0"
-              End="0,19.2857142857143">
+              End="-13.8571428571421,19.2857142857143">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.2857142857143" />
+                    End="0,9.39285714285715" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.39285714285715"
+                    Point2="0,13.3928571428572"
+                    Point3="-4,13.3928571428572" />
+                  <mssgle:LineSegment
+                    End="-9.85714285714209,13.3928571428572" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-9.85714285714209,13.3928571428572"
+                    Point2="-13.8571428571421,13.3928571428572"
+                    Point3="-13.8571428571421,17.3928571428572" />
+                  <mssgle:LineSegment
+                    End="-13.8571428571421,19.2857142857143" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1452,18 +1464,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="470.607142857142,719.5">
+          TopLeft="459,676.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,41.928571428572"
+              EndConnector="14.2142857142851,84.928571428572"
               Start="0,0"
-              End="0,34.428571428572">
+              End="14.2142857142851,77.428571428572">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.428571428572" />
+                    End="0,38.464285714286" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,38.464285714286"
+                    Point2="0,42.464285714286"
+                    Point3="4,42.464285714286" />
+                  <mssgle:LineSegment
+                    End="10.2142857142851,42.464285714286" />
+                  <mssgle:CubicBezierSegment
+                    Point1="10.2142857142851,42.464285714286"
+                    Point2="14.2142857142851,42.464285714286"
+                    Point3="14.2142857142851,46.464285714286" />
+                  <mssgle:LineSegment
+                    End="14.2142857142851,77.428571428572" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

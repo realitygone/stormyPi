@@ -1,3 +1,5 @@
 v14
 bin
 obj
+/code/database/Sensor Database/*.dbmdl
+/code/database/Sensor Database/*.jfm
