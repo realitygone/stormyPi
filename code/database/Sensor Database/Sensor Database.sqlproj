@@ -64,6 +64,7 @@
     <Folder Include="log\Tables" />
     <Folder Include="Staging" />
     <Folder Include="Staging\Tables" />
+    <Folder Include="log\Views" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Security\log.sql" />
@@ -79,6 +80,8 @@
     <Build Include="Staging\Tables\BME280.sql" />
     <Build Include="Staging\Tables\SI1145.sql" />
     <Build Include="Staging\Tables\TSL2156.sql" />
+    <Build Include="log\Views\v_etl_executions.sql" />
+    <Build Include="log\Views\v_current_execution.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="SqlSchemaCompare.scmp" />
