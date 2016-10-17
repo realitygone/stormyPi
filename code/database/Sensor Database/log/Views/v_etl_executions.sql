@@ -1,17 +1,25 @@
-﻿CREATE VIEW [log].[v_etl_executions]
+﻿CREATE VIEW log.v_etl_executions
 AS
-SELECT [Audit_key],
-	[Task_name],
-	[File_name],
-	[Processing_Start],
-	[Processing_end],
-	DATEDIFF(mi,[Processing_Start],COALESCE([Processing_end],GETDATE())) as Duration_minutes,
-	--DATEDIFF(hh,[Processing_Start],COALESCE([Processing_end],GETDATE())) as dur_hour,
-	[Items_processed],
-	[Items_successful],
-	[Items_error],
-	[Success],
-	[Row_count_start],
-	[Row_count_end],
-	[Execution_GUID]
-FROM [log].[etl_executions];
+SELECT *,
+	CAST(CASE 
+		WHEN duration_seconds > 3600 THEN CAST(duration_seconds AS DECIMAL(10,2))/3600
+		WHEN duration_seconds > 60 THEN CAST(duration_seconds AS DECIMAL(10,2))/60
+		ELSE duration_seconds
+	END AS NVARCHAR(MAX)) +
+	CASE 
+		WHEN duration_seconds > 3600 THEN ' hours'
+		WHEN duration_seconds > 60 THEN ' minutes'
+		ELSE ' seconds'
+	END AS duration_label
+FROM (
+	SELECT Audit_key,
+		Task_name,
+		File_name,
+		Processing_start,
+		Processing_end,
+		Items_processed,
+		Row_count_end,
+		Success,
+		DATEDIFF(SS,Processing_start,COALESCE(Processing_end,SYSDATETIME())) AS duration_seconds
+	FROM log.etl_executions
+) AS x
